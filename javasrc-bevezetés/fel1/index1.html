@@ -4,10 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style1.css">
-    <title>Document</title>
+    <title>Bakonyi Bitfaragók</title>
 </head>
 <body>
-    
+    <header>
+        <h1>Első Feladat</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="../fel2/index2.html">Második Feladat</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="csapat">
+            <h2>Csapatunk</h2>
+            <ul>
+                <li>
+                    <img src="#" alt="#" class="csapat-kep">
+                    <p>Szabó Johanna Blanka</p>
+                    <button onclick="toggleBemutatkozas('bemutatkozas1')">Bemutatkozás</button>
+                    <p id="bemutatkozas1" class="bemutatkozas">Tag 1 bemutatkozó szövege.</p>
+                </li>
+                <li>
+                    <img src="#" alt="#" class="csapat-kep">
+                    <p>Solti Csongor Péter</p>
+                    <button onclick="toggleBemutatkozas('bemutatkozas2')">Bemutatkozás</button>
+                    <p id="bemutatkozas2" class="bemutatkozas">Tag 2 bemutatkozó szövege.</p>
+                </li>
+            </ul>
+            <p>Felkészítő tanár: Drávucz Katalin</p>
+            <p>Iskola: <span title="Szabó Johanna Blanka">BMSZC Verebély László</span> & <span title="Solti Csongor Péter">BMSZC Neumann János</span></p>
+        </section>
+        <section id="extra-kepek">
+            <h2>Extra képek</h2>
+            <img id="extraKep" class="extra-kep" src="" alt="Extra kép">
+            <button id="kovetkezoKep">Következő kép</button>
+        </section>
+    </main>
+    <footer>
+        <div id="ora"></div>
+    </footer>
     <script src="script1.js"></script>
 </body>
 </html>
