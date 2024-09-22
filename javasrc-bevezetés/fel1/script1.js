@@ -9,7 +9,14 @@ function toggleBemutatkozas(id) {
     elem.style.display = elem.style.display === "none" ? "block" : "none";
 }
 
-const kepek = ["extra1.jpg", "extra2.jpg", "extra3.jpg"];
+const kepek = [
+    "../forras/images/tajkep1.jpg",
+    "../forras/images/tajkep2.jpg",
+    "../forras/images/tajkep3.jpg",
+    "../forras/images/tajkep4.jpg",
+    "../forras/images/tajkep5.jpg"
+];
+
 let index = 0;
 
 document.getElementById("kovetkezoKep").onclick = function() {
