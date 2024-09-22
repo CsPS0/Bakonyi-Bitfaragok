@@ -1,0 +1,23 @@
+body{
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.csapat{
+    margin: 20px 0;
+}
+
+.csapat img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.ora{
+    margin: 20px;
+    font-size: 24px;
+}
+
+.bemutatkozas{
+    display: none;
+}
