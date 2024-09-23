@@ -7,20 +7,16 @@
     <title>Bakonyi Bitfaragók</title>
 </head>
 <body>
-    <header>
-        <h1>Első Feladat</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="../fel2/index2.html">Második Feladat</a></li>
-        </ul>
-    </nav>
     <main>
+        <section id="teto">
+            <h1>Első Feladat</h1>
+            <div id="ora"></div>
+        </section>
         <section id="csapat">
             <h2>Csapatunk</h2>
-            <ul>
+            <ul style="list-style-type: none;">
                 <li>
-                    <img src="#" alt="#" class="csapat-kep">
+                    <img src="../forras/images/Apik.webp" alt="Apik" class="csapat-kep">
                     <p>Szabó Johanna Blanka</p>
                     <button onclick="toggleBemutatkozas('bemutatkozas1')">Bemutatkozás</button>
                     <p id="bemutatkozas1" class="bemutatkozas">Tag 1 bemutatkozó szövege.</p>
@@ -29,19 +25,18 @@
                     <img src="../forras/images/csps.jpg" alt="CsPS" class="csapat-kep">
                     <p>Solti Csongor Péter</p>
                     <button onclick="toggleBemutatkozas('bemutatkozas2')">Bemutatkozás</button>
-                    <p id="bemutatkozas2" class="bemutatkozas">Szia! A nevem Solti Csongor Péter, 16 éves vagyok, és jelenleg a BMSZC Neumann János Szakközépiskolában tanulok programozást és szoftverfejlesztést. Szenvedélyesen érdekelnek az új technológiák, és folyamatosan igyekszem fejleszteni a programozási tudásom. Szabadidőmben szeretek játékokat játszani, filmeket nézni, valamint sokat olvasok és kódolok magamban. Fő célom, hogy sikeres programozó legyek és új technológiákat ismerjek meg. Előszeretettel tanulom a <a href="https://github.com/CsPS0">GitHubom</a> kezelését</p>
+                    <p id="bemutatkozas2" class="bemutatkozas">Szia! A nevem Solti Csongor Péter, 16 éves vagyok, és jelenleg a BMSZC Neumann János Szakközépiskolában tanulok programozást és szoftverfejlesztést. Szenvedélyesen érdekelnek az új technológiák, és folyamatosan igyekszem fejleszteni a programozási tudásom. Szabadidőmben szeretek játékokat játszani, filmeket nézni, valamint sokat olvasok és kódolok magamban. Fő célom, hogy sikeres programozó legyek és új technológiákat ismerjek meg. Előszeretettel tanulom a <a href="https://github.com/CsPS0" target="_blank">GitHubom</a> kezelését</p>
                 </li>
             </ul>
             <p>Felkészítő tanár: Drávucz Katalin</p>
-            <p>Iskola: <span title="Szabó Johanna Blanka">BMSZC Verebély László</span> & <span title="Solti Csongor Péter">BMSZC Neumann János</span></p>
+            <p>Iskolák: <span title="Szabó Johanna Blanka">BMSZC Verebély László</span> & <span title="Solti Csongor Péter">BMSZC Neumann János</span></p>
         </section>
         <section id="extra-kepek">
             <h2>Extra képek</h2>
-            <img id="extraKep" class="extra-kep" src="" alt="Extra kép">
             <button id="kovetkezoKep">Következő kép</button>
+            <img id="extraKep" class="extra-kep" src="" alt="Extra kép" style="display: none;">
         </section>
         <section id="keplista">
-            <h2>Rejtett képek</h2>
             <img id="extraKep1" class="extra-kep" src="../forras/images/tajkep1.jpg" alt="Extra kép 1" style="display:none;">
             <img id="extraKep2" class="extra-kep" src="../forras/images/tajkep2.jpg" alt="Extra kép 2" style="display:none;">
             <img id="extraKep3" class="extra-kep" src="../forras/images/tajkep3.jpg" alt="Extra kép 3" style="display:none;">
@@ -49,9 +44,6 @@
             <img id="extraKep5" class="extra-kep" src="../forras/images/tajkep5.jpg" alt="Extra kép 5" style="display:none;">
         </section>
     </main>
-    <footer>
-        <div id="ora"></div>
-    </footer>
     <script src="script1.js"></script>
 </body>
 </html>

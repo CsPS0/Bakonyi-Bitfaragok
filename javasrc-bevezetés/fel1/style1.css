@@ -40,6 +40,11 @@ nav ul li a {
     text-decoration: none;
 }
 
+nav ul div {
+    display: block;
+    color: white;
+}
+
 nav ul li a:hover {
     background-color: #555;
 }
@@ -78,6 +83,20 @@ nav ul li a:hover {
     margin: 10px 0;
 }
 
+.csapat-kep {
+    width: 200px;
+    height: 200px;
+    padding: 50px;
+    transition: transform .2s;
+    margin: 0 auto;
+}
+
+.csapat-kep:hover {
+    -ms-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5); 
+}
+
 .bemutatkozas {
     display: none;
     font-size: 0.9em;
@@ -106,14 +125,17 @@ button:hover {
 }
 
 .extra-kep {
-    max-width: 300px;
-    border: 3px solid #007BFF;
+    max-width: 500px;
+    border: 3px solid black;
     border-radius: 10px;
-    margin: 20px;
+    margin: 20px auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: block;
 }
 
 #kovetkezoKep {
+    display: block;
+    margin: 20px auto;
     padding: 10px 20px;
     background-color: #28a745;
     color: white;
@@ -124,13 +146,6 @@ button:hover {
 
 #kovetkezoKep:hover {
     background-color: #218838;
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    margin-top: 30px;
 }
 
 #ora {
