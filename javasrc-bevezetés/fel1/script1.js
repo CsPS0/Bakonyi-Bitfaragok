@@ -20,7 +20,20 @@ const kepek = [
 let index = 0;
 
 document.getElementById("kovetkezoKep").onclick = function() {
-    document.getElementById("extraKep").style.display = "block";
-    document.getElementById("extraKep").src = kepek[index];
-    index = (index + 1) % kepek.length;
+    const extraKep = document.getElementById("extraKep");
+
+    if (index < kepek.length) {
+        extraKep.style.display = "block";
+        extraKep.src = kepek[index];
+        index++;
+    } else {
+        const atlepes = confirm("Ez volt az utolsó kép. Át szeretnél lépni a második feladatra?");
+        if (atlepes) {
+            window.location.href = "../fel2/index2.html";
+        } else {
+            index = 0;
+            extraKep.src = kepek[index];
+            index++;
+        }
+    }
 };
