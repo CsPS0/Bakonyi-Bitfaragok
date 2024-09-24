@@ -11,7 +11,7 @@
     <main>
         <section id="teto">
             <h1>Bakonyi Bitfaragók</h1>
-            <div id="ora"></div>
+            <div id="ora"></div> <!--Az óra elé rakjunk egy 🕒 szimbólumot-->
         </section>
         <section id="csapat" class="csapat">
             <h2>Csapatunk</h2>
@@ -25,7 +25,7 @@
                 <li>
                     <img src="../forras/images/csps.jpg" alt="CsPS" class="csapat-kep">
                     <p>Solti Csongor Péter</p>
-                    <button onclick="toggleBemutatkozas('bemutatkozas2')">Bemutatkozás</button>
+                    <button onclick="toggleBemutatkozas('bemutatkozas2')">Bemutatkozás</button> <!--A bemutatkozó szöveghez rakhatnánk animációt, de ez nem a leglényegesebb-->
                     <p id="bemutatkozas2" class="bemutatkozas">Szia! A nevem Solti Csongor Péter, 16 éves vagyok, és jelenleg a BMSZC Neumann János Szakközépiskolában tanulok programozást és szoftverfejlesztést. Szenvedélyesen érdekelnek az új technológiák, és folyamatosan igyekszem fejleszteni a programozási tudásom. Szabadidőmben szeretek játékokat játszani, filmeket nézni, valamint sokat olvasok és kódolok magamban. Fő célom, hogy sikeres programozó legyek és új technológiákat ismerjek meg. Előszeretettel tanulom a <a href="https://github.com/CsPS0" target="_blank">GitHubom</a> kezelését</p>
                 </li>
             </ul>
@@ -33,7 +33,7 @@
             <p>Iskolák: <span title="Szabó Johanna Blanka">BMSZC Verebély László</span> & <span title="Solti Csongor Péter">BMSZC Neumann János</span></p>
         </section>
         <section id="extra-kepek">
-            <h2>Extra képek</h2>
+            <h2>Extra képek</h2> <!--Az extra képeknél az oldal megnyitásakor már alapból mutasson egy képet, és méretezzük át akkorára, mint a "csapatunk" divet-->
             <button id="kovetkezoKep">Következő kép</button>
             <img id="extraKep" class="extra-kep" src="" alt="Extra kép" style="display: none;">
         </section>
@@ -42,7 +42,7 @@
             <img id="extraKep2" class="extra-kep" src="../forras/images/tajkep2.jpg" alt="Extra kép 2" style="display:none;">
             <img id="extraKep3" class="extra-kep" src="../forras/images/tajkep3.jpg" alt="Extra kép 3" style="display:none;">
             <img id="extraKep4" class="extra-kep" src="../forras/images/tajkep4.jpg" alt="Extra kép 4" style="display:none;">
-            <img id="extraKep5" class="extra-kep" src="../forras/images/tajkep5.jpg" alt="Extra kép 5" style="display:none;">
+            <img id="extraKep5" class="extra-kep" src="../forras/images/tajkep5.jpg" alt="Extra kép 5" style="display:none;"> <!--A feladatban az áll, ha az utolsó képhez érkezünk, akkor az utolsó gombnyomás kezdje elölről a képeket, ne a következő feladatra vigyen-->
         </section>
     </main>
     <script src="script1.js"></script>
