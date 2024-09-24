@@ -1,185 +1,148 @@
-/* Goofy Ass ChatGPT Template */
-
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Raleway', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f0f2f5;
     color: #333;
     text-align: center;
 }
 
-header {
-    background-color: #007BFF;
-    color: white;
-    padding: 20px;
-    margin-bottom: 30px;
-}
-
 h1 {
-    font-size: 2.5em;
-    margin: 0;
+    font-size: 3em;
+    color: #007BFF;
+    margin-top: 0;
+    font-weight: 700;
 }
 
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    background-color: #333;
-}
-
-nav ul li {
-    display: inline-block;
-    margin: 0;
-}
-
-nav ul li a {
-    display: block;
-    padding: 10px 20px;
-    color: white;
-    text-decoration: none;
-}
-
-nav ul div {
-    display: block;
-    color: white;
-}
-
-nav ul li a:hover {
-    background-color: #555;
+h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 400;
 }
 
 .csapat {
     margin: 30px auto;
-    padding: 20px;
-    max-width: 1000px;
+    padding: 40px;
+    max-width: 1200px;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 .csapat ul {
     list-style-type: none;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .csapat li {
-    display: inline-block;
-    width: 200px;
+    width: 250px;
     margin: 20px;
-    vertical-align: top;
     text-align: center;
 }
 
-.csapat img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-}
-
-.csapat p {
-    font-size: 1.2em;
-    margin: 10px 0;
-}
-
 .csapat-kep {
-    width: 200px;
-    height: 200px;
-    padding: 50px;
-    transition: transform .2s;
-    margin: 0 auto;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    transition: transform .3s ease;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .csapat-kep:hover {
-    -ms-transform: scale(1.5);
-    -webkit-transform: scale(1.5);
-    transform: scale(1.5); 
+    transform: scale(1.1);
 }
 
 .bemutatkozas {
     display: none;
-    font-size: 0.9em;
-    color: #666;
+    font-size: 1em;
+    color: #555;
     background-color: #f9f9f9;
     padding: 10px;
     border-radius: 5px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
 button {
-    padding: 10px 20px;
+    padding: 10px 25px;
     background-color: #007BFF;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px;
     cursor: pointer;
+    font-size: 1em;
+    transition: background-color .3s ease, transform .2s ease;
 }
 
 button:hover {
     background-color: #0056b3;
+    transform: translateY(-2px);
 }
 
 #extra-kepek {
-    margin-top: 30px;
+    margin-top: 50px;
 }
 
 .extra-kep {
-    max-width: 500px;
-    border: 3px solid black;
-    border-radius: 10px;
-    margin: 20px auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    display: block;
+    max-width: 80%;
+    border: 5px solid #333;
+    border-radius: 15px;
+    margin: 30px auto;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: transform .3s ease;
+}
+
+.extra-kep:hover {
+    transform: scale(1.05);
 }
 
 #kovetkezoKep {
-    display: block;
+    display: inline-block;
     margin: 20px auto;
-    padding: 10px 20px;
+    padding: 10px 25px;
     background-color: #28a745;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px;
     cursor: pointer;
+    font-size: 1em;
+    transition: background-color .3s ease, transform .2s ease;
 }
 
 #kovetkezoKep:hover {
     background-color: #218838;
+    transform: translateY(-2px);
 }
 
 #ora {
-    font-size: 1.5em;
+    font-size: 1.8em;
+    margin: 20px 0;
 }
 
 @media (max-width: 768px) {
     .csapat li {
-        width: 100%;
-        display: block;
-        margin-bottom: 30px;
-    }
-
-    .extra-kep {
-        max-width: 100%;
+        width: 45%;
     }
 }
 
 @media (max-width: 480px) {
     h1 {
-        font-size: 1.8em;
+        font-size: 2em;
     }
 
-    nav ul li a {
-        padding: 10px 15px;
-        font-size: 0.9em;
-    }
-
-    .csapat img {
-        width: 100px;
-        height: 100px;
+    .csapat li {
+        width: 100%;
     }
 
     button {
-        padding: 8px 16px;
+        padding: 8px 20px;
+    }
+
+    .extra-kep {
+        max-width: 100%;
     }
 }
