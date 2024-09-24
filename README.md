@@ -16,9 +16,9 @@ A Pannon Egyetem Műszaki Informatikai Karának Online pontgyűjtő csapatversen
 
 ## Felhasznált technológiák
 A projekt létrehozva:
-* ![html](https://github.com/CsPS0/Bakonyi-Bitfaragok/blob/main/images2/HTML.png?raw=true)
-* ![css](https://github.com/CsPS0/Bakonyi-Bitfaragok/blob/main/images2/CSS.png?raw=true)
-* ![javascript](https://github.com/CsPS0/Bakonyi-Bitfaragok/blob/main/images2/Javascript.png?raw=true)
+* ![html](https://github.com/CsPS0/Bakonyi-Bitfaragok/blob/main/images/HTML.png?raw=true)
+* ![css](https://github.com/CsPS0/Bakonyi-Bitfaragok/blob/main/images/CSS.png?raw=true)
+* ![javascript](https://github.com/CsPS0/Bakonyi-Bitfaragok/blob/main/images/Javascript.png?raw=true)
 
 ## Csapattagok
 * Szabó Johanna Blanka 
