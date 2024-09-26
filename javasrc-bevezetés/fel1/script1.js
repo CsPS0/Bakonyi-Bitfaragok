@@ -36,4 +36,10 @@ document.getElementById("kovetkezoKep").onclick = function() {
             index++;
         }
     }
+
+    // Automatikus görgetés az oldal aljára
+    window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'smooth' // Sima görgetés
+    });
 };
