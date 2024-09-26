@@ -11,19 +11,19 @@
     <main>
         <section id="teto">
             <h1>Bakonyi Bitfaragók</h1>
-            <div id="ora"></div> <!--Az óra elé rakjunk egy 🕒 szimbólumot-->
+            <div id="ora"></div>
         </section>
         <section id="csapat" class="csapat">
             <h2>Csapatunk</h2>
             <ul style="list-style-type: none;">
                 <li>
-                    <img src="../forras/images/Apik.webp" alt="Apik" class="csapat-kep">
+                    <img src="../forras/images/Apik.webp" draggable="false" alt="Apik" class="csapat-kep">
                     <p>Szabó Johanna Blanka</p>
                     <button onclick="toggleBemutatkozas('bemutatkozas1')">Bemutatkozás</button>
                     <p id="bemutatkozas1" class="bemutatkozas">A nevem Johanna, a Verebély László Szakközépiskolában élem tanulmányaimat. Már nagyon régóta a programozás az alapvető szenvedélyem az idegennyelv mellett, illetve a mesterséges intelligencia fejlesztése is szokott foglalkoztatni. Jelenleg azon dolgozom, hogy egy nap létrehozzak egy olyan dolgot, amely majd törekvésre készteti az embereket a technológiák kapcsán.</p>
                 </li>
                 <li>
-                    <img src="../forras/images/csps.jpg" alt="CsPS" class="csapat-kep">
+                    <img src="../forras/images/csps.jpg" draggable="false" alt="CsPS" class="csapat-kep">
                     <p>Solti Csongor Péter</p>
                     <button onclick="toggleBemutatkozas('bemutatkozas2')">Bemutatkozás</button> <!--A bemutatkozó szöveghez rakhatnánk animációt, de ez nem a leglényegesebb-->
                     <p id="bemutatkozas2" class="bemutatkozas">Szia! A nevem Solti Csongor Péter, 16 éves vagyok, és jelenleg a BMSZC Neumann János Szakközépiskolában tanulok programozást és szoftverfejlesztést. Szenvedélyesen érdekelnek az új technológiák, és folyamatosan igyekszem fejleszteni a programozási tudásom. Szabadidőmben szeretek játékokat játszani, filmeket nézni, valamint sokat olvasok és kódolok magamban. Fő célom, hogy sikeres programozó legyek és új technológiákat ismerjek meg. Előszeretettel tanulom a <a href="https://github.com/CsPS0" target="_blank">GitHubom</a> kezelését</p>
@@ -33,17 +33,17 @@
             <p>Iskolák: <span title="Szabó Johanna Blanka">BMSZC Verebély László</span> & <span title="Solti Csongor Péter">BMSZC Neumann János</span></p>
         </section>
         <section id="extra-kepek">
-            <h2>Extra képek</h2> <!--Az extra képeknél az oldal megnyitásakor már alapból mutasson egy képet, és méretezzük át akkorára, mint a "csapatunk" divet-->
-            <button id="kovetkezoKep">Következő kép</button>
+            <h2>Extra képek</h2>
+            <button id="kovetkezoKep" onclick="mutasdTitkoskep()">Következő kép</button>
             <img id="extraKep" class="extra-kep" src="" alt="Extra kép" style="display: none;">
         </section>
         <section id="keplista">
-            <img id="extraKep1" class="extra-kep" src="../forras/images/tajkep1.jpg" alt="Extra kép 1" style="display:none;">
-            <img id="extraKep2" class="extra-kep" src="../forras/images/tajkep2.jpg" alt="Extra kép 2" style="display:none;">
-            <img id="extraKep3" class="extra-kep" src="../forras/images/tajkep3.jpg" alt="Extra kép 3" style="display:none;">
-            <img id="extraKep4" class="extra-kep" src="../forras/images/tajkep4.jpg" alt="Extra kép 4" style="display:none;">
-            <img id="extraKep5" class="extra-kep" src="../forras/images/tajkep5.jpg" alt="Extra kép 5" style="display:none;"> <!--A feladatban az áll, ha az utolsó képhez érkezünk, akkor az utolsó gombnyomás kezdje elölről a képeket, ne a következő feladatra vigyen-->
-        </section>
+            <img id="extraKep1" class="extra-kep" src="../forras/images/tajkep1.jpg" draggable="false" alt="Extra kép 1" style="display:none;">
+            <img id="extraKep2" class="extra-kep" src="../forras/images/tajkep2.jpg" draggable="false" alt="Extra kép 2" style="display:none;">
+            <img id="extraKep3" class="extra-kep" src="../forras/images/tajkep3.jpg" draggable="false" alt="Extra kép 3" style="display:none;">
+            <img id="extraKep4" class="extra-kep" src="../forras/images/tajkep4.jpg" draggable="false" alt="Extra kép 4" style="display:none;">
+            <img id="extraKep5" class="extra-kep" src="../forras/images/tajkep5.jpg" draggable="false" alt="Extra kép 5" style="display:none;">
+        </section>        
     </main>
     <script src="script1.js"></script>
 </body>
