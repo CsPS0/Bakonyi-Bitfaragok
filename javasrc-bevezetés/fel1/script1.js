@@ -9,6 +9,27 @@ function toggleBemutatkozas(id) {
     elem.style.display = elem.style.display === "none" ? "block" : "none";
 }
 
+function frissitOra() {
+    const most = new Date();
+    const ora = most.getHours();
+    const perc = most.getMinutes();
+    const masodperc = most.getSeconds();
+
+    document.getElementById("ora").innerText = most.toLocaleTimeString();
+
+    const oraEl = document.getElementById("hourHand");
+    const percEl = document.getElementById("minuteHand");
+    const masodpercEl = document.getElementById("secondHand");
+
+    oraEl.style.transform = `rotate(${(ora % 12) * 30 + (perc / 60) * 30}deg)`;
+    percEl.style.transform = `rotate(${perc * 6}deg)`;
+    masodpercEl.style.transform = `rotate(${masodperc * 6}deg)`;
+}
+
+setInterval(frissitOra, 1000);
+frissitOra();
+
+
 const kepek = [
     "../forras/images/tajkep1.jpg",
     "../forras/images/tajkep2.jpg",
@@ -37,9 +58,8 @@ document.getElementById("kovetkezoKep").onclick = function() {
         }
     }
 
-    // Automatikus görgetés az oldal aljára
     window.scrollTo({
         top: document.body.scrollHeight,
-        behavior: 'smooth' // Sima görgetés
+        behavior: 'smooth'
     });
 };

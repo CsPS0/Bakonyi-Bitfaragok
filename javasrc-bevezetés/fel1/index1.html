@@ -4,13 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style1.css">
-    <title>Bakonyi Bitfaragók</title>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Bakonyi Bitfaragók</title>
 </head>
 <body>
     <main>
         <section id="teto">
             <h1>Bakonyi Bitfaragók</h1>
+            <div id="analogClock" class="clock">
+                <div class="retro-kar retro-ora" id="hourHand"></div>
+                <div class="retro-kar retro-perc" id="minuteHand"></div>
+                <div class="retro-kar retro-masodperc" id="secondHand"></div>
+            </div>            
             <div id="ora"></div>
         </section>
         <section id="csapat" class="csapat">
@@ -20,24 +25,24 @@
                     <img src="../forras/images/Apik.webp" draggable="false" alt="Apik" class="csapat-kep">
                     <p>Szabó Johanna Blanka</p>
                     <button onclick="toggleBemutatkozas('bemutatkozas1')">Bemutatkozás</button>
-                    <p id="bemutatkozas1" class="bemutatkozas">A nevem Johanna, a Verebély László Szakközépiskolában élem tanulmányaimat. Már nagyon régóta a programozás az alapvető szenvedélyem az idegennyelv mellett, illetve a mesterséges intelligencia fejlesztése is szokott foglalkoztatni. Jelenleg azon dolgozom, hogy egy nap létrehozzak egy olyan dolgot, amely majd törekvésre készteti az embereket a technológiák kapcsán.</p>
+                    <p id="bemutatkozas1" class="bemutatkozas">A nevem Johanna, a Verebély László Szakközépiskolában élem tanulmányaimat. <br><hr> Már nagyon régóta a programozás az alapvető szenvedélyem az idegennyelv mellett, illetve a mesterséges intelligencia fejlesztése is szokott foglalkoztatni. <br><hr> Jelenleg azon dolgozom, hogy egy nap létrehozzak egy olyan dolgot, amely majd törekvésre készteti az embereket a technológiák kapcsán.</p>
                 </li>
                 <li>
                     <img src="../forras/images/csps.jpg" draggable="false" alt="CsPS" class="csapat-kep">
                     <p>Solti Csongor Péter</p>
                     <button onclick="toggleBemutatkozas('bemutatkozas2')">Bemutatkozás</button> <!--A bemutatkozó szöveghez rakhatnánk animációt, de ez nem a leglényegesebb-->
-                    <p id="bemutatkozas2" class="bemutatkozas">Szia! A nevem Solti Csongor Péter, 16 éves vagyok, és jelenleg a BMSZC Neumann János Szakközépiskolában tanulok programozást és szoftverfejlesztést. Szenvedélyesen érdekelnek az új technológiák, és folyamatosan igyekszem fejleszteni a programozási tudásom. Szabadidőmben szeretek játékokat játszani, filmeket nézni, valamint sokat olvasok és kódolok magamban. Fő célom, hogy sikeres programozó legyek és új technológiákat ismerjek meg. Előszeretettel tanulom a <a href="https://github.com/CsPS0" target="_blank">GitHubom</a> kezelését</p>
+                    <p id="bemutatkozas2" class="bemutatkozas">Szia! A nevem Csongor, 16 éves vagyok, és jelenleg a BMSZC Neumann János Szakközépiskolában tanulok programozást és szoftverfejlesztést. <br><hr> Szenvedélyesen érdekelnek az új technológiák, és folyamatosan igyekszem fejleszteni a programozási tudásom. <br><hr> Szabadidőmben szeretek játékokat játszani, filmeket nézni, valamint sokat olvasok és kódolok magamban. <br><hr> Fő célom, hogy sikeres programozó legyek és új technológiákat ismerjek meg, illetve előszeretettel tanulom a <a href="https://github.com/CsPS0" target="_blank">GitHubom</a> kezelését</p>
                 </li>
             </ul>
-            <p>Felkészítő tanár: Drávucz Katalin</p>
-            <p>Iskolák: <span title="Szabó Johanna Blanka">BMSZC Verebély László</span> & <span title="Solti Csongor Péter">BMSZC Neumann János</span></p>
+            <p>Felkészítő tanár: <span title="dravucz.katalin@njszg.hu">Drávucz Katalin</span></p>
+            <p>Iskolák: <a class="iskolak" href="https://verebelyszki.hu/" target="_blank">BMSZC Verebély László</a> & <a class="iskolak" href="https://neumann.bmszc.hu/" target="_blank">BMSZC Neumann János</a></p>
         </section>
         <section id="extra-kepek">
             <h2>Extra képek</h2>
             <button id="kovetkezoKep" onclick="mutasdTitkoskep()">Következő kép</button>
             <img id="extraKep" class="extra-kep" src="" alt="Extra kép" style="display: none;">
         </section>
-        <section id="keplista">
+        <section id="keplista"> <!--A képek lehetnének akkorák, mint a csapat section szélessége, vagy az extra képeknek is legyen egy buborék tartója, csak az nem annyira uniqe-->
             <img id="extraKep1" class="extra-kep" src="../forras/images/tajkep1.jpg" draggable="false" alt="Extra kép 1" style="display:none;">
             <img id="extraKep2" class="extra-kep" src="../forras/images/tajkep2.jpg" draggable="false" alt="Extra kép 2" style="display:none;">
             <img id="extraKep3" class="extra-kep" src="../forras/images/tajkep3.jpg" draggable="false" alt="Extra kép 3" style="display:none;">

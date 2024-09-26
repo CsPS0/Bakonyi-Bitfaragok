@@ -21,6 +21,10 @@ h2 {
     font-weight: 400;
 }
 
+#teto {
+    position: relative;
+}
+
 .csapat {
     margin: 30px auto;
     padding: 40px;
@@ -121,6 +125,51 @@ button:hover {
 #ora {
     font-size: 1.8em;
     margin: 20px 0;
+}
+
+.clock {
+    width: 200px;
+    height: 200px;
+    border: 10px solid #333;
+    border-radius: 50%;
+    position: relative;
+    margin: 20px auto;
+    background-color: #f3f3f3;
+    z-index: 2;
+}
+
+.retro-kar {
+    position: absolute;
+    background: #333;
+    transform-origin: bottom;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.retro-ora {
+    width: 8px;
+    height: 50px;
+}
+
+.retro-perc {
+    width: 6px;
+    height: 70px;
+}
+
+.retro-masodperc {
+    width: 4px;
+    height: 90px;
+    background: red;
+}
+
+.iskolak {
+    text-decoration: none;
+    color: black;
+}
+
+.iskolak:hover {
+    color: #007BFF;
 }
 
 @media (max-width: 768px) {
