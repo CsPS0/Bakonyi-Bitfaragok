@@ -55,14 +55,15 @@ h2 {
     transition: transform .3s ease;
     margin-bottom: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    filter: blur(1px);
 }
 
 .csapat-kep:hover {
     transform: scale(1.1);
+    filter: blur(0px);
 }
 
 .bemutatkozas {
-    display: none;
     font-size: 1em;
     color: #555;
     background-color: #f9f9f9;
@@ -71,8 +72,30 @@ h2 {
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
+.bemutatkozas hr {
+    border: none;
+    border-top: 1px solid #ccc; /* Szolid vonal */
+    margin: 20px 0; /* Távolság a szövegek között */
+}
+
+#bemutatkozas2 a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #333;
+}
+
+#bemutatkozas2 a:hover {
+    color: gray;
+}
+
+.tanar:hover {
+    color: #28a745;
+    cursor: help;
+}
+
 button {
     padding: 10px 25px;
+    margin-bottom: 20px;
     background-color: #007BFF;
     color: white;
     border: none;
@@ -92,6 +115,7 @@ button:hover {
 }
 
 .extra-kep {
+    max-height: 60rem;
     max-width: 80%;
     border: 5px solid #333;
     border-radius: 15px;
@@ -128,9 +152,9 @@ button:hover {
 }
 
 .clock {
-    width: 200px;
-    height: 200px;
-    border: 10px solid #333;
+    width: 100px;
+    height: 100px;
+    border: 5px solid #333;
     border-radius: 50%;
     position: relative;
     margin: 20px auto;
@@ -148,19 +172,50 @@ button:hover {
 }
 
 .retro-ora {
-    width: 8px;
-    height: 50px;
+    width: 4px;
+    height: 25px;
 }
 
 .retro-perc {
-    width: 6px;
-    height: 70px;
+    width: 3px;
+    height: 35px;
 }
 
 .retro-masodperc {
-    width: 4px;
-    height: 90px;
+    width: 2px;
+    height: 45px;
     background: red;
+}
+
+.jelzes {
+    position: absolute;
+    font-size: 1.2em; /* Betűméret a jelzésekhez */
+    font-weight: bold;
+    color: #333;
+}
+
+#jelzes12 {
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#jelzes3 {
+    top: 50%;
+    right: 1px;
+    transform: translateY(-50%);
+}
+
+#jelzes6 {
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#jelzes9 {
+    top: 50%;
+    left: 1px;
+    transform: translateY(-50%);
 }
 
 .iskolak {
