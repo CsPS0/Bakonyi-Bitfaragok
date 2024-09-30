@@ -10,34 +10,45 @@
     <header>
         <h1>Második Feladat</h1>
     </header>
+    
     <nav>
         <ul>
-            <li><a href="../fel1/index1.html">Második Feladat</a></li>
+            <li><a href="../fel1/index1.html">Vissza az első feladathoz</a></li>
         </ul>
     </nav>
+    
     <main>
-        <div> <!-- https://www.w3schools.com/html/html_forms.asp -->
+
+        <section class="form-container">
+            <h2>Tankolás Rögzítése</h2>
             <form id="tankolasForm">
                 <input type="date" id="datum" required>
-                <input type="number" id="mennyiseg" placeholder="Tankolt mennyiség" required>
-                <input type="number" id="koltseg" placeholder="Fizetett összeg" required>
+                <input type="number" id="mennyiseg" placeholder="Tankolt mennyiség (L)" required>
+                <input type="number" id="koltseg" placeholder="Fizetett összeg (Ft)" required>
                 <input type="number" id="km" placeholder="Kilométer óra állása" required>
-                <button type="submit">Tankolás rögzítése</button>
+                <button type="submit">Rögzítés</button>
             </form>
-        </div>
-        <div>
+        </section>
+
+        <section class="naplo-container">
             <h2>Havi költségek</h2>
             <form id="dateFilterForm">
                 <input type="date" id="startDate" required>
                 <input type="date" id="endDate" required>
                 <button type="submit">Szűrés</button>
             </form>
-            <h2>Tankolási Napló</h2>
-        </div>
+            
+            <div>
+                <h2>Tankolási Napló</h2>
+                <div id="tankolasi-naplo"></div>
+            </div>
+        </section>
     </main>
+    
     <footer>
-
+        <p>© 2024 Bakonyi Bitfaragók</p>
     </footer>
+    
     <script src="script2.js"></script>
 </body>
 </html>
