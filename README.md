@@ -1,4 +1,5 @@
 # Bakonyi Bitfaragó Bajnokság 2024
+- https://mik.uni-pannon.hu/kari-elet/hirek/bakonyi-bitfarago-bajnoksag-2024-pe-mik
 
 ## Tartalomjegyzék
 - [Bakonyi Bitfaragó Bajnokság 2024](#bakonyi-bitfaragó-bajnokság-2024)
