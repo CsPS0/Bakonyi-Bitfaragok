@@ -35,7 +35,7 @@ h2 {
 
 .csapat {
     margin: 30px auto;
-    padding: 40px;
+    padding: 50px;
     max-width: 1200px;
     background-color: #fff;
     border-radius: 8px;
@@ -129,7 +129,7 @@ button:hover {
 }
 
 .extra-kep {
-    max-height: 60rem;
+    max-height: 54rem;
     max-width: 80%;
     border: 5px solid #333;
     border-radius: 15px;
