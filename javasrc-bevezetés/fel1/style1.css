@@ -10,14 +10,11 @@ body {
     background-color: #ffffff;
     color: #333;
     text-align: center;
-    
-    
-    
 }
 
 h1 {
     font-size: 3em;
-    color: #ffffff;
+    color: #007BFF;
     margin-top: 0;
     font-weight: 700;
 }
@@ -82,8 +79,8 @@ h2 {
 
 .bemutatkozas hr {
     border: none;
-    border-top: 1px solid #ccc; /* Szolid vonal */
-    margin: 20px 0; /* Távolság a szövegek között */
+    border-top: 1px solid #ccc;
+    margin: 20px 0;
 }
 
 #bemutatkozas1 a {
@@ -96,6 +93,10 @@ h2 {
     text-decoration: none;
     font-weight: bold;
     color: #333;
+}
+
+#bemutatkozas1 a:hover {
+    color: gray;
 }
 
 #bemutatkozas2 a:hover {
@@ -122,6 +123,10 @@ button {
 button:hover {
     background-color: rgb(21, 82, 148);
     transform: translateY(-2px);
+}
+
+button:active {
+    background-color: #6993c0;
 }
 
 #extra-kepek {
@@ -160,9 +165,14 @@ button:hover {
     transform: translateY(-2px);
 }
 
+#kovetkezoKep:active {
+    background-color: #6993c0;
+}
+
 #ora {
     font-size: 1.8em;
     margin: 20px 0;
+    user-select: none;
 }
 
 .clock {
@@ -203,9 +213,10 @@ button:hover {
 
 .jelzes {
     position: absolute;
-    font-size: 1.2em; /* Betűméret a jelzésekhez */
+    font-size: 1.2em;
     font-weight: bold;
     color: #333;
+    user-select: none;
 }
 
 #jelzes12 {
@@ -239,6 +250,10 @@ button:hover {
 
 .iskolak:hover {
     color: #007BFF;
+}
+
+.iskolak:active {
+    color: #6993c0;
 }
 
 @media (max-width: 768px) {
