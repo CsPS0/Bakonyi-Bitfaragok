@@ -11,9 +11,13 @@ body {
     text-align: center;
 }
 
+p {
+    color: #002338;
+}
+
 h1 {
     font-size: 3em;
-    color: #ffffff;
+    color: #27566A;
     margin-top: 40px;
     font-weight: 700;
 }
@@ -33,7 +37,7 @@ h2 {
     margin: 30px auto;
     padding: 50px;
     max-width: 1200px;
-    background-color: #fff;
+    background-color: #a1b4b8ba;
     border-radius: 8px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
@@ -70,7 +74,7 @@ h2 {
 .bemutatkozas {
     font-size: 1em;
     color: #555;
-    background-color: #f9f9f9;
+    background-color: rgb(173, 194, 195);
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
