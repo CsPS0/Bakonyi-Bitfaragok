@@ -3,40 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tankolási Napló</title>
     <link rel="stylesheet" href="style2.css">
-    <title>Bakonyi Bitfaragók</title>
 </head>
 <body>
-    <main>
+    <main role="main">
+        <section>
+            <button class="vissza-egy"><a style="color: #FFF8DC; text-decoration: none;" href="../fel1/index1.html">Vissza</a></button>
+        </section>
         <section>
             <h1>Tankolási Napló</h1>
             <form id="tankolasForm">
                 <label for="datum">Dátum:</label>
-                <input type="date" id="datum" name="datum" required><br>
+                <input type="date" id="datum" required>
+                
                 <label for="mennyiseg">Mennyiség (liter):</label>
-                <input type="number" id="mennyiseg" name="mennyiseg" step="0.01" required><br>
+                <input type="number" id="mennyiseg" step="0.01" required>
+                
                 <label for="koltseg">Költség (Ft):</label>
-                <input type="number" id="koltseg" name="koltseg" step="0.01" required><br>
+                <input type="number" id="koltseg" step="1" required>
+                
                 <label for="km">Kilométer állás:</label>
-                <input type="number" id="km" name="km" required><br>
+                <input type="number" id="km" step="1" required>
+                
                 <button type="submit">Hozzáadás</button>
             </form>
         </section>
-        <section class="naplo-container">
+        <section class="naplo-kontener">
             <h2>Havi költségek</h2>
+            <div id="havi-koltsegek"></div>
+            
             <h2>Hatékonyság szerinti rangsor</h2>
+            <div id="hatekonysag-rangsor"></div>
         </section>
         <section>
             <h2>Szűrés dátum szerint</h2>
-            <form id="dateFilterForm">
-                <label for="startDate">Kezdő dátum:</label>
-                <input type="date" id="startDate" name="startDate" required><br>
-                <label for="endDate">Vég dátum:</label>
-                <input type="date" id="endDate" name="endDate" required><br>
+            <form id="datumSzuroForm">
+                <label for="kezdoDatum">Kezdő dátum:</label>
+                <input type="date" id="kezdoDatum" required>
+                
+                <label for="vegDatum">Vég dátum:</label>
+                <input type="date" id="vegDatum" required>
+                
                 <button type="submit">Szűrés</button>
             </form>
         </section>
-        <section id="tankolasi-naplo"></section>
+        <section id="tankolasi-naplo">
+            <h2>Tankolási bejegyzések</h2>
+        </section>
     </main>
     <footer>
         <p>© 2024 Bakonyi Bitfaragók</p>
