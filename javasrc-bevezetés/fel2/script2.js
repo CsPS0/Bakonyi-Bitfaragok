@@ -13,17 +13,18 @@ document.getElementById("tankolasForm").addEventListener("submit", function(even
         km: km
     };
     tankolasok.push(tankolas);
+    tankolasok.sort((a, b) => a.datum - b.datum);
     megjelenitTankolasok();
     haviKoltsegSzamitas();
-    hatékonysagSzamitas();
+    hatekonysagSzamitas();
 });
 
 function megjelenitTankolasok(szurtTankolasok = null) {
     let naplo = document.getElementById("tankolasi-naplo");
-    naplo.innerHTML = `<h2>Tankolási Napló</h2>`;
-    const records = szurtTankolasok || tankolasok;
-    records.forEach((t) => {
-        naplo.innerHTML += `<p>Dátum: ${t.datum.toLocaleDateString()}, Mennyiség: ${t.mennyiseg}L, Összeg: ${t.koltseg}Ft, Km: ${t.km}</p>`;
+    naplo.innerHTML = `<h2>Tankolási bejegyzések</h2>`;
+    const bejegyzesek = szurtTankolasok || tankolasok;
+    bejegyzesek.forEach((t) => {
+        naplo.innerHTML += `<p>Dátum: ${t.datum.toLocaleDateString()}, Mennyiség: ${t.mennyiseg.toFixed(2)}L, Összeg: ${t.koltseg.toFixed(0)}Ft, Km: ${t.km}</p>`;
     });
 }
 
@@ -36,46 +37,47 @@ function haviKoltsegSzamitas() {
         }
         haviKoltsegek[honap] += t.koltseg;
     });
-    let haviKoltsegSection = document.querySelector(".naplo-container h2:first-of-type");
-    haviKoltsegSection.innerHTML = "Havi költségek";
+    let haviKoltsegDiv = document.getElementById("havi-koltsegek");
+    haviKoltsegDiv.innerHTML = "";
     for (let honap in haviKoltsegek) {
-        haviKoltsegSection.innerHTML += `<p>${honap}: ${haviKoltsegek[honap].toFixed(2)} Ft</p>`;
+        haviKoltsegDiv.innerHTML += `<p>${honap}: ${haviKoltsegek[honap].toFixed(0)} Ft</p>`;
     }
 }
 
-function datumIntervallumSzures(startDate, endDate) {
-    let szurt = tankolasok.filter(t => t.datum >= new Date(startDate) && t.datum <= new Date(endDate));
+function datumIntervallumSzures(kezdoDatum, vegDatum) {
+    let szurt = tankolasok.filter(t => t.datum >= new Date(kezdoDatum) && t.datum <= new Date(vegDatum));
     megjelenitTankolasok(szurt);
 }
 
-function hatékonysagSzamitas() {
+function hatekonysagSzamitas() {
     if (tankolasok.length < 2) return;
     let hatekonysagAdatok = [];
     for (let i = 1; i < tankolasok.length; i++) {
-        let eloző = tankolasok[i - 1];
+        let elozo = tankolasok[i - 1];
         let jelenlegi = tankolasok[i];
-        let megtettKm = jelenlegi.km - eloző.km;
-        let felhasznaltUzany = eloző.mennyiseg; // Feltételezzük, hogy minden tankolásnál tele tankolunk
-        let hatekonysag = megtettKm / felhasznaltUzany;
+        let megtettKm = jelenlegi.km - elozo.km;
+        let felhasznaltUzemanyag = jelenlegi.mennyiseg;
+        let atlagFogyasztas = (felhasznaltUzemanyag / megtettKm) * 100; // L/100km
         hatekonysagAdatok.push({
-            datum: jelenlegi.datum,
+            kezdoDatum: elozo.datum,
+            vegDatum: jelenlegi.datum,
             megtettKm: megtettKm,
-            felhasznaltUzany: felhasznaltUzany,
-            hatekonysag: hatekonysag
+            felhasznaltUzemanyag: felhasznaltUzemanyag,
+            atlagFogyasztas: atlagFogyasztas
         });
     }
 
-    hatekonysagAdatok.sort((a, b) => b.hatekonysag - a.hatekonysag);
-    let hatekonysagSection = document.querySelector(".naplo-container h2:last-of-type");
-    hatekonysagSection.innerHTML = "Hatékonyság szerinti rangsor";
+    hatekonysagAdatok.sort((a, b) => a.atlagFogyasztas - b.atlagFogyasztas);
+    let hatekonysagDiv = document.getElementById("hatekonysag-rangsor");
+    hatekonysagDiv.innerHTML = "";
     hatekonysagAdatok.forEach((adat) => {
-        hatekonysagSection.innerHTML += `<p>Dátum: ${adat.datum.toLocaleDateString()}, Kilométer: ${adat.megtettKm}, Fogyasztás: ${adat.felhasznaltUzany}L, Hatékonyság: ${adat.hatekonysag.toFixed(2)} km/L</p>`;
+        hatekonysagDiv.innerHTML += `<p>${adat.kezdoDatum.toLocaleDateString()} - ${adat.vegDatum.toLocaleDateString()}: ${adat.megtettKm.toFixed(0)} km, ${adat.felhasznaltUzemanyag.toFixed(2)}L, Átlagfogyasztás: ${adat.atlagFogyasztas.toFixed(2)} L/100km</p>`;
     });
 }
 
-document.getElementById("dateFilterForm").addEventListener("submit", function(event) {
+document.getElementById("datumSzuroForm").addEventListener("submit", function(event) {
     event.preventDefault();
-    let startDate = document.getElementById("startDate").value;
-    let endDate = document.getElementById("endDate").value;
-    datumIntervallumSzures(startDate, endDate);
+    let kezdoDatum = document.getElementById("kezdoDatum").value;
+    let vegDatum = document.getElementById("vegDatum").value;
+    datumIntervallumSzures(kezdoDatum, vegDatum);
 });
