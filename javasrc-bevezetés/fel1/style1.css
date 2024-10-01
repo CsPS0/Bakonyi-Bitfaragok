@@ -1,5 +1,5 @@
 body {
-    background-image: url('../forras/images/');
+    background-image: url('../forras/images/background.jpg');
     background-repeat: no-repeat; 
     background-size: cover;
     background-color: white;
@@ -10,11 +10,14 @@ body {
     background-color: #ffffff;
     color: #333;
     text-align: center;
+    
+    
+    
 }
 
 h1 {
     font-size: 3em;
-    color: #007BFF;
+    color: #ffffff;
     margin-top: 0;
     font-weight: 700;
 }
@@ -95,10 +98,6 @@ h2 {
     color: #333;
 }
 
-#bemutatkozas1 a:hover {
-    color: gray;
-}
-
 #bemutatkozas2 a:hover {
     color: gray;
 }
@@ -123,10 +122,6 @@ button {
 button:hover {
     background-color: rgb(21, 82, 148);
     transform: translateY(-2px);
-}
-
-button:active {
-    background-color: #6993c0;
 }
 
 #extra-kepek {
@@ -165,14 +160,9 @@ button:active {
     transform: translateY(-2px);
 }
 
-#kovetkezoKep:active {
-    background-color: #6993c0;
-}
-
 #ora {
     font-size: 1.8em;
     margin: 20px 0;
-    user-select: none;
 }
 
 .clock {
@@ -213,10 +203,9 @@ button:active {
 
 .jelzes {
     position: absolute;
-    font-size: 1.2em;
+    font-size: 1.2em; 
     font-weight: bold;
     color: #333;
-    user-select: none;
 }
 
 #jelzes12 {
@@ -250,10 +239,6 @@ button:active {
 
 .iskolak:hover {
     color: #007BFF;
-}
-
-.iskolak:active {
-    color: #6993c0;
 }
 
 @media (max-width: 768px) {
