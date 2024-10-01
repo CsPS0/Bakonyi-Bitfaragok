@@ -4,15 +4,11 @@ body {
     background-size: cover;
     background-color: white;
     font-family: 'Raleway', sans-serif;
-    font-family: 'Raleway', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #ffffff;
     color: #333;
     text-align: center;
-    
-    
-    
 }
 
 h1 {
@@ -163,6 +159,7 @@ button:hover {
 #ora {
     font-size: 1.8em;
     margin: 20px 0;
+    user-select: none;
 }
 
 .clock {
@@ -174,6 +171,7 @@ button:hover {
     margin: 20px auto;
     background-color: #f3f3f3;
     z-index: 2;
+    user-select: none;
 }
 
 .retro-kar {
