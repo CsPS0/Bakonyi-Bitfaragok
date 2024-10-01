@@ -22,7 +22,7 @@ main {
     margin-right: auto;
     margin-left: auto;
     padding: 30px;
-    background-color: #FAEBD7;
+    background-color: #faebd7bf;
     box-shadow: 0 0 10px rgba(74, 55, 40, 0.1);
     border-radius: 8px;
 }
@@ -31,6 +31,7 @@ h1 {
     text-align: center;
     margin-bottom: 20px;
     color: #8B4513;
+    font-size: 30px;
 }
 
 h2 {
@@ -52,9 +53,9 @@ input[type="number"], input[type="date"] {
     width: 90%;
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid #D2B48C;
+    border: 1px solid #936c36d1;
     border-radius: 4px;
-    background-color: #FFF8DC;
+    background-color: #f8f5e973;
     color: #4A3728;
 }
 
@@ -63,7 +64,7 @@ button {
     background-color: #8B4513;
     color: #FFF8DC;
     border: none;
-    border-radius: 4px;
+    border-radius: 25px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
