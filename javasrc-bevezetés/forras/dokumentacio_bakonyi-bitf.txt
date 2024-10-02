@@ -1,0 +1,21 @@
+Bakonyi Bitfaragók 2024
+
+Csapat: Chonyapik
+
+Tagok:
+- Szabó Johanna Blanka
+- Solti Csongor Péter
+
+1. Feladat:
+- az oldal kék árnyalatú,
+- a második feladatra való átlépésre addig kell nyomni a gombot, ameddig a JavaScript fel nem dob egy alertbox-ot, ahol ha az "ok"-ra nyom a felhasználó, akkor bedobja a 2. feladatra,
+- reszponzív elrendezés.
+
+2. Feladat:
+- az oldal barna árnyalatú,
+- az adatok leszűrése nem a leg felhasználó barátabb, de megpróbáltunk mindent kihozni az elküldött jegyzetekből, és a W3.Schools-ból,
+- reszponzív elrendezés.
+
+Egyéb Infó:
+- némi átdolgozással majd ki lesz téve Public-ra a GitHub Repository-ja ennek a verseny projekteknek.
+- a README.md-ben is találhatóak némi infók
