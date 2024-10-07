@@ -7,7 +7,7 @@
   - [🏚️ Általános információ](#️-általános-információ)
   - [📺 Felhasznált technológiák](#-felhasznált-technológiák)
   - [👥 Csapattagok](#-csapattagok)
-  - [🎉 Továbbkutatások](#-továbbkutatások)
+  - [🎉 Továbbjutások](#-továbbjutások)
     - [I. Vigyázz,](#i-vigyázz)
     - [II. Kész,](#ii-kész)
     - [III. Rajt!](#iii-rajt)
@@ -24,10 +24,10 @@ A Pannon Egyetem Műszaki Informatikai Karának Online pontgyűjtő csapatversen
 * Szabó Johanna Blanka
 * Solti Csongor Péter
 
-## 🎉 Továbbkutatások
+## 🎉 Továbbjutások
 ### I. Vigyázz,
 - [I. forduló](https://github.com/CsPS0/Bakonyi-Bitfaragok/tree/main/javasrc-bevezet%C3%A9s)
-- II. forduló
+- [II. forduló](https://github.com/CsPS0/Bakonyi-Bitfaragok/tree/main/javasrc-folytat%C3%A1s)
 - III. forduló
 
 ### II. Kész,
