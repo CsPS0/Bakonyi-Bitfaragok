@@ -7,12 +7,17 @@
     <title>Gyümölcsszedős játék</title>
 </head>
 <body>
-    <nav>
+    <div class="fejlec">
+        <button id="sotetGomb" class="sotet-kapcsolo" aria-label="Sötét mód váltás">
+            <svg class="nap-ikon" viewBox="0 0 24 24" width="24" height="24">
+                <path d="M12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.65 0-3 1.35-3 3s1.35 3 3 3 3-1.35 3-3-1.35-3-3-3zm0-2V4M12 20v-3M4 12H1m22 0h-3M6.34 6.34L4.22 4.22m15.56 15.56l-2.12-2.12M6.34 17.66l-2.12 2.12M19.78 4.22l-2.12 2.12"/>
+            </svg>
+            <svg class="hold-ikon" viewBox="0 0 24 24" width="24" height="24">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+        </button>
         <h1>Gyümölcsszedős játék</h1>
-        <div class="sotet">
-            <button id="sotetGomb">Toggle Dark Mode</button>
-        </div>
-    </nav>
+    </div>
     <main>
         <div id="game-info">
             <p>Lépések: <span id="lepesek">10</span></p>
@@ -26,7 +31,7 @@
             <button id="teleport">Teleport</button>
             <button id="szomszed">Szomszédos mezők szüretelése</button>
         </div>
-        <button id="tutorialGomb">Ablak megnyitása</button>
+        <button id="tutorialGomb">Tutorial</button>
         <div id="tutorialAblak" class="tutorial">
             <div class="tutorial-tartalom">
                 <span id="tutorialBezarasGomb" class="bezaras">&times;</span>
