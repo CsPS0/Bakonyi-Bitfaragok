@@ -1,3 +1,5 @@
+//Játék
+
 let palyaMeret = 5;
 let lepesekSzama = 10;
 let gyumolcsokSzama = 0;
@@ -149,3 +151,22 @@ document.addEventListener('keydown', (event) => {
             break;
     }
 });
+
+//Tutorial
+const ablak = document.getElementById("tutorialAblak");
+const megnyitasGomb = document.getElementById("tutorialGomb");
+const bezarasGomb = document.getElementById("tutorialBezarasGomb");
+
+megnyitasGomb.onclick = function() {
+    ablak.style.display = "block";
+}
+
+bezarasGomb.onclick = function() {
+    ablak.style.display = "none";
+}
+
+window.onclick = function(esemeny) {
+    if (esemeny.target == ablak) {
+        ablak.style.display = "none";
+    }
+}
