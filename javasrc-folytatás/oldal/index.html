@@ -7,32 +7,39 @@
     <title>Gyümölcsszedős játék</title>
 </head>
 <body>
-    <h1>Gyümölcsszedős játék</h1>
-    <div id="game-info">
-        <p>Lépések: <span id="lepesek">10</span></p>
-        <p>Gyümölcsök: <span id="gyumolcsok">0</span></p>
-        <p>Legjobb eredmény: <span id="lgjb-eredmeny">0</span></p>
-    </div>
-    <div id="jatekter"></div>
-    <button id="ujra">Új játék</button>
-    <div id="abilities">
-        <button id="atlo">Átlós mozgás</button>
-        <button id="teleport">Teleport</button>
-        <button id="szomszed">Szomszédos mezők szüretelése</button>
-    </div>
-    <button id="tutorialGomb">Ablak megnyitása</button>
-    <div id="tutorialAblak" class="tutorial">
-        <div class="tutorial-tartalom">
-            <span id="tutorialBezarasGomb" class="bezaras">&times;</span>
-            <h2>Tutorial</h2>
-            <ul style="list-style-type: none;">
-                <li>Up</li>
-                <li>Down</li>
-                <li>Left</li>
-                <li>Right</li>
-            </ul>
+    <nav>
+        <h1>Gyümölcsszedős játék</h1>
+        <div class="sotet">
+            <button id="sotetGomb">Toggle Dark Mode</button>
         </div>
-    </div>
+    </nav>
+    <main>
+        <div id="game-info">
+            <p>Lépések: <span id="lepesek">10</span></p>
+            <p>Gyümölcsök: <span id="gyumolcsok">0</span></p>
+            <p>Legjobb eredmény: <span id="lgjb-eredmeny">0</span></p>
+        </div>
+        <div id="jatekter"></div>
+        <button id="ujra">Új játék</button>
+        <div id="abilities">
+            <button id="atlo">Átlós mozgás</button>
+            <button id="teleport">Teleport</button>
+            <button id="szomszed">Szomszédos mezők szüretelése</button>
+        </div>
+        <button id="tutorialGomb">Ablak megnyitása</button>
+        <div id="tutorialAblak" class="tutorial">
+            <div class="tutorial-tartalom">
+                <span id="tutorialBezarasGomb" class="bezaras">&times;</span>
+                <h2>Tutorial</h2>
+                <ul style="list-style-type: none;">
+                    <li>Up</li>
+                    <li>Down</li>
+                    <li>Left</li>
+                    <li>Right</li>
+                </ul>
+            </div>
+        </div>
+    </main>
     <script src="script.js"></script>
 </body>
 </html>

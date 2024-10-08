@@ -10,6 +10,16 @@ h1 {
     color: #2c3e50;
 }
 
+.sotet {
+    text-align: center;
+    margin-top: 50px;
+}
+
+body.sotet-mod {
+    background-color: #121212;
+    color: #ffffff;
+}
+
 #game-info {
     margin-bottom: 20px;
 }

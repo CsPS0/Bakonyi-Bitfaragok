@@ -1,5 +1,21 @@
-//Játék
+//Dark Mode
+const toggleButton = document.getElementById('sotetGomb');
 
+if (localStorage.getItem('sotet-mod') === 'enabled') {
+        document.body.classList.add('sotet-mod');
+}
+
+toggleButton.addEventListener('click', () => {
+    document.body.classList.toggle('sotet-mod');
+    if (document.body.classList.contains('sotet-mod')) {
+    localStorage.setItem('sotet-mod', 'enabled');
+    } 
+    else {
+    localStorage.setItem('sotet-mod', 'disabled');
+    }
+});
+
+//Játék
 let palyaMeret = 5;
 let lepesekSzama = 10;
 let gyumolcsokSzama = 0;
