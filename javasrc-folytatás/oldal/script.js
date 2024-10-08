@@ -1,17 +1,18 @@
 //Dark Mode
-const toggleButton = document.getElementById('sotetGomb');
+const sotetGomb = document.getElementById('sotetGomb');
+const napIkon = document.querySelector('.nap-ikon');
+const holdIkon = document.querySelector('.hold-ikon');
 
 if (localStorage.getItem('sotet-mod') === 'enabled') {
-        document.body.classList.add('sotet-mod');
+    document.body.classList.add('sotet-mod');
 }
 
-toggleButton.addEventListener('click', () => {
+sotetGomb.addEventListener('click', () => {
     document.body.classList.toggle('sotet-mod');
     if (document.body.classList.contains('sotet-mod')) {
-    localStorage.setItem('sotet-mod', 'enabled');
-    } 
-    else {
-    localStorage.setItem('sotet-mod', 'disabled');
+        localStorage.setItem('sotet-mod', 'enabled');
+    } else {
+        localStorage.setItem('sotet-mod', 'disabled');
     }
 });
 
