@@ -1,15 +1,17 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     text-align: center;
     background-color: #f5f5f5;
     margin: 0;
     padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 h1 {
     color: #2c3e50;
     margin: 0;
-    flex-grow: 0;
+    font-size: 2.5em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .fejlec {
@@ -20,6 +22,9 @@ h1 {
     gap: 20px;
     margin-bottom: 30px;
     padding: 0 20px;
+    border-bottom: 2px solid #2c3e50;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
 }
 
 .sotet-kapcsolo {
@@ -29,54 +34,10 @@ h1 {
     padding: 8px;
     border-radius: 50%;
     transition: background-color 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    left: 20px;
 }
 
 .sotet-kapcsolo:hover {
     background-color: rgba(0, 0, 0, 0.1);
-}
-
-.sotet-kapcsolo svg {
-    width: 24px;
-    height: 24px;
-    stroke: #2c3e50;
-    fill: none;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-
-.nap-ikon {
-    display: block;
-}
-
-.hold-ikon {
-    display: none;
-}
-
-body.sotet-mod {
-    background-color: #121212;
-    color: #ffffff;
-}
-
-body.sotet-mod h1 {
-    color: #ffffff;
-}
-
-body.sotet-mod .sotet-kapcsolo svg {
-    stroke: #fff;
-}
-
-body.sotet-mod .nap-ikon {
-    display: none;
-}
-
-body.sotet-mod .hold-ikon {
-    display: block;
 }
 
 #game-info {
@@ -84,6 +45,8 @@ body.sotet-mod .hold-ikon {
     display: flex;
     justify-content: center;
     gap: 20px;
+    font-size: 1.2em;
+    color: #2c3e50;
 }
 
 #jatekter {
@@ -99,12 +62,8 @@ body.sotet-mod .hold-ikon {
     position: relative;
     width: 60px;
     height: 60px;
-    background-color: #2ecc71;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border-radius: 8px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 .ures {
@@ -113,6 +72,7 @@ body.sotet-mod .hold-ikon {
 
 .gyumolcs {
     background-color: #e74c3c;
+    box-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
 }
 
 .jatekos {
@@ -130,24 +90,6 @@ body.sotet-mod .hold-ikon {
     background-color: #f39c12;
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-}
-
-body.sotet-mod .mezo {
-    background-color: #1a472a;
-}
-
-body.sotet-mod .ures {
-    background-color: #2c3e50;
-}
-
-body.sotet-mod .gyumolcs {
-    background-color: #c0392b;
-}
-
-body.sotet-mod .jatekos::after {
-    background-color: #ffd700;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
 button {
@@ -158,7 +100,8 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 1em;
 }
 
 button:hover {
@@ -166,7 +109,7 @@ button:hover {
 }
 
 button:active {
-    transform: scale(0.98);
+    transform: scale(0.95);
 }
 
 #abilities {
@@ -200,11 +143,7 @@ button:active {
     width: 80%;
     max-width: 500px;
     border-radius: 8px;
-}
-
-body.sotet-mod .tutorial-tartalom {
-    background-color: #1a1a1a;
-    border-color: #333;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
 .bezaras {
@@ -213,19 +152,43 @@ body.sotet-mod .tutorial-tartalom {
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
-    line-height: 20px;
 }
 
-.bezaras:hover,
-.bezaras:focus {
+.bezaras:hover {
     color: black;
 }
 
-body.sotet-mod .bezaras:hover,
-body.sotet-mod .bezaras:focus {
-    color: white;
+/* Dark Mode */
+body.sotet-mod {
+    background-color: #121212;
+    color: #ffffff;
 }
 
+body.sotet-mod h1 {
+    color: #ffffff;
+}
+
+body.sotet-mod #game-info {
+    color: #ffffff;
+}
+
+body.sotet-mod .mezo {
+    background-color: #1a472a;
+}
+
+body.sotet-mod .ures {
+    background-color: #2c3e50;
+}
+
+body.sotet-mod .gyumolcs {
+    background-color: #c0392b;
+}
+
+body.sotet-mod .jatekos::after {
+    background-color: #ffd700;
+}
+
+/* Media Queries */
 @media (max-width: 600px) {
     #jatekter {
         grid-template-columns: repeat(5, 50px);
@@ -235,11 +198,6 @@ body.sotet-mod .bezaras:focus {
     .mezo {
         width: 50px;
         height: 50px;
-    }
-
-    .jatekos::after {
-        width: 25px;
-        height: 25px;
     }
 
     button {
@@ -257,10 +215,5 @@ body.sotet-mod .bezaras:focus {
     .mezo {
         width: 40px;
         height: 40px;
-    }
-
-    .jatekos::after {
-        width: 20px;
-        height: 20px;
     }
 }
