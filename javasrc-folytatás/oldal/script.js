@@ -118,8 +118,8 @@ function kepessegAtlo() {
         const atlosOpciok = `
             <div class="atlos-opciok">
                 <button onclick="mozgasAtlosan(-1, -1)">↖ Balra fel</button>
-                <button onclick="mozgasAtlosan(-1, 1)">↙ Balra le</button>
-                <button onclick="mozgasAtlosan(1, -1)">↗ Jobbra fel</button>
+                <button onclick="mozgasAtlosan(1, -1)">↙ Balra le</button>
+                <button onclick="mozgasAtlosan(-1, 1)">↗ Jobbra fel</button>
                 <button onclick="mozgasAtlosan(1, 1)">↘ Jobbra le</button>
             </div>
         `;
