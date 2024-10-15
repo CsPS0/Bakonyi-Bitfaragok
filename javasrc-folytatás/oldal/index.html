@@ -8,6 +8,18 @@
 </head>
 <body>
     <div class="fejlec">
+        <div id="tutorialAblak" class="tutorial">
+            <div class="tutorial-tartalom">
+                <span id="tutorialBezarasGomb" class="bezaras">&times;</span>
+                <h2>Tutorial</h2>
+                <ul>
+                    <li>Használd a nyilakat a mozgáshoz</li>
+                    <li>Szedd össze a gyümölcsöket</li>
+                    <li>Használd a képességeket bölcsen</li>
+                    <li>Érj el minél magasabb pontszámot!</li>
+                </ul>
+            </div>
+        </div>
         <h1 class="focim">Gyümölcsszedős Játék</h1>
         <button id="sotetGomb" class="sotet-kapcsolo">
             <svg class="nap-ikon" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
@@ -24,6 +36,7 @@
                 S59.553,41.503,59,41.503z"/>
         </svg>
         </button>
+        <button id="tutorialGomb">Tutorial</button>
     </div>
     <div id="game-info">
         <span>Lépések: <span id="lepesek">10</span></span>
@@ -36,19 +49,6 @@
         <button id="atlo">Átlós mozgás</button>
         <button id="teleport">Teleport</button>
         <button id="szomszed">Szomszédos mezők szüretelése</button>
-    </div>
-    <button id="tutorialGomb">Tutorial</button>
-    <div id="tutorialAblak" class="tutorial">
-        <div class="tutorial-tartalom">
-            <span id="tutorialBezarasGomb" class="bezaras">&times;</span>
-            <h2>Tutorial</h2>
-            <ul>
-                <li>Használd a nyilakat a mozgáshoz</li>
-                <li>Szedd össze a gyümölcsöket</li>
-                <li>Használd a képességeket bölcsen</li>
-                <li>Érj el minél magasabb pontszámot!</li>
-            </ul>
-        </div>
     </div>
     <script src="script.js"></script>
 </body>
