@@ -3,48 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gyümölcsszedős Játék</title>
     <link rel="stylesheet" href="style.css">
-    <title>Gyümölcsszedős játék</title>
 </head>
 <body>
     <div class="fejlec">
-        <button id="sotetGomb" class="sotet-kapcsolo" aria-label="Sötét mód váltás">
-            <svg class="nap-ikon" viewBox="0 0 24 24" width="24" height="24">
+        <button id="sotetGomb" class="sotet-kapcsolo">
+            <svg class="nap-ikon" viewbox="0 0 24 24" width="24" height="24">
                 <path d="M12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.65 0-3 1.35-3 3s1.35 3 3 3 3-1.35 3-3-1.35-3-3-3zm0-2V4M12 20v-3M4 12H1m22 0h-3M6.34 6.34L4.22 4.22m15.56 15.56l-2.12-2.12M6.34 17.66l-2.12 2.12M19.78 4.22l-2.12 2.12"/>
             </svg>
-            <svg class="hold-ikon" viewBox="0 0 24 24" width="24" height="24">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            <svg class="hold-ikon" viewbox="0 0 24 24" width="24" height="24">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
             </svg>
         </button>
-        <h1>Gyümölcsszedős játék</h1>
+        <h1>Gyümölcsszedős Játék</h1>
     </div>
-    <main>
-        <div id="game-info">
-            <p>Lépések: <span id="lepesek">10</span></p>
-            <p>Gyümölcsök: <span id="gyumolcsok">0</span></p>
-            <p>Legjobb eredmény: <span id="lgjb-eredmeny">0</span></p>
+    <div id="game-info">
+        <span>Lépések: <span id="lepesek">10</span></span>
+        <span>Gyümölcsök: <span id="gyumolcsok">0</span></span>
+        <span>Legjobb eredmény: <span id="lgjb-eredmeny">0</span></span>
+    </div>
+    <div id="jatekter"></div>
+    <button id="ujra">Új játék</button>
+    <div id="abilities">
+        <button id="atlo">Átlós mozgás</button>
+        <button id="teleport">Teleport</button>
+        <button id="szomszed">Szomszédos mezők szüretelése</button>
+    </div>
+    <button id="tutorialGomb">Tutorial</button>
+    <div id="tutorialAblak" class="tutorial">
+        <div class="tutorial-tartalom">
+            <span id="tutorialBezarasGomb" class="bezaras">&times;</span>
+            <h2>Tutorial</h2>
+            <ul>
+                <li>Használd a nyilakat a mozgáshoz</li>
+                <li>Szedd össze a gyümölcsöket</li>
+                <li>Használd a képességeket bölcsen</li>
+                <li>Érj el minél magasabb pontszámot!</li>
+            </ul>
         </div>
-        <div id="jatekter"></div>
-        <button id="ujra">Új játék</button>
-        <div id="abilities">
-            <button id="atlo">Átlós mozgás</button>
-            <button id="teleport">Teleport</button>
-            <button id="szomszed">Szomszédos mezők szüretelése</button>
-        </div>
-        <button id="tutorialGomb">Tutorial</button>
-        <div id="tutorialAblak" class="tutorial">
-            <div class="tutorial-tartalom">
-                <span id="tutorialBezarasGomb" class="bezaras">&times;</span>
-                <h2>Tutorial</h2>
-                <ul style="list-style-type: none;">
-                    <li>Up</li>
-                    <li>Down</li>
-                    <li>Left</li>
-                    <li>Right</li>
-                </ul>
-            </div>
-        </div>
-    </main>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
