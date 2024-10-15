@@ -23,7 +23,7 @@ function kepessegekFrissitese() {
 }
 
 function palyaGeneralasa() {
-    const gyumolcsok = ['alma', 'barack', 'banan', 'cseresznye'];
+    const gyumolcsok = ['alma', 'banan', 'szolo', 'narancs', 'ananasz', 'gorogdinnye'];
     for (let i = 0; i < palyaMeret; i++) {
         palya[i] = [];
         for (let j = 0; j < palyaMeret; j++) {
@@ -115,7 +115,7 @@ function ujraindit(ujPalya = true) {
 
 function kepessegAtlo() {
     if (kepessegHasznalat.atlo > 0) {
-        const atlosOpciok = `
+        const atlosOpciok = ` 
             <div class="atlos-opciok">
                 <button onclick="mozgasAtlosan(-1, -1)">↖ Balra fel</button>
                 <button onclick="mozgasAtlosan(1, -1)">↙ Balra le</button>
@@ -176,13 +176,16 @@ function kepessegSzomszed() {
 }
 
 document.getElementById('ujra').addEventListener('click', () => {
-    const ujrainditOpciok = `
-        <div class="ujraindit-opciok">
-            <button onclick="ujraindit(false)">Újrakezdés ugyanezen a pályán</button>
-            <button onclick="ujraindit(true)">Teljesen új pálya</button>
-        </div>
-    `;
-    document.getElementById('ujra').insertAdjacentHTML('afterend', ujrainditOpciok);
+    lepesekSzama = 10;
+    gyumolcsokSzama = 0;
+    jatekosPozicio = { x: 0, y: 0 };
+    palya = [];
+    palyaGeneralasa();
+    palyaKirajzolasa();
+    kepessegekFrissitese();
+    lepesekElem.innerText = lepesekSzama;
+    gyumolcsokElem.innerText = gyumolcsokSzama;
+    legjobbElem.innerText = legjobbEredmeny;
 });
 
 document.getElementById('atlo').addEventListener('click', kepessegAtlo);

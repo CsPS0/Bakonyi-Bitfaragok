@@ -91,11 +91,6 @@ body.sotet-mod .hold-ikon {
     background-color: #7f8c8d;
 }
 
-.gyumolcs {
-    background-color: #e74c3c;
-    box-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
-}
-
 .jatekos {
     position: relative;
 }
@@ -224,23 +219,33 @@ body.sotet-mod .bezaras:hover {
     color: #ecf0f1;
 }
 
+.gyumolcs {
+    background-color: #e74c3c;
+    box-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
+    position: relative; /* Ensure positioning for the pseudo-element */
+    width: 60px; /* Set desired width */
+    height: 60px; /* Set desired height */
+}
+
 .gyumolcs::before {
     content: '';
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 40px;
-    height: 40px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+    width: 40px; /* Size of the icon */
+    height: 40px; /* Size of the icon */
+    background-size: contain; /* Scale the background image */
+    background-repeat: no-repeat; /* Prevent image repetition */
+    background-position: center; /* Center the background image */
 }
 
-.gyumolcs.alma::before { background-image: url('path/to/apple-icon.png'); }
-.gyumolcs.barack::before { background-image: url('path/to/peach-icon.png'); }
-.gyumolcs.banan::before { background-image: url('path/to/banana-icon.png'); }
-.gyumolcs.cseresznye::before { background-image: url('path/to/cherry-icon.png'); }
+.gyumolcs.alma::before { background-image: url('../forrás/images/apple.svg'); }
+.gyumolcs.banan::before { background-image: url('../forrás/images/banana.svg'); }
+.gyumolcs.szolo::before { background-image: url('../forrás/images/grapes.svg'); }
+.gyumolcs.narancs::before { background-image: url('../forrás/images/orange.svg'); }
+.gyumolcs.ananasz::before { background-image: url('../forrás/images/pineapple.svg'); }
+.gyumolcs.gorogdinnye::before { background-image: url('../forrás/images/watermelon.svg'); }
 
 .atlos-opciok {
     display: flex;
@@ -311,5 +316,10 @@ body.sotet-mod .kepesseg-hasznalat {
     .mezo {
         width: 40px;
         height: 40px;
+    }
+
+    button {
+        padding: 6px 10px;
+        font-size: 12px;
     }
 }
