@@ -49,8 +49,24 @@ function palyaKirajzolasa() {
             if (i === jatekosPozicio.x && j === jatekosPozicio.y) {
                 mezo.classList.add('jatekos');
             }
+            // Hozzáadjuk a kezdőpozíció kiválasztásának lehetőségét
+            if (lepesekSzama === 10) {
+                mezo.addEventListener('click', () => kezdoPozicioValasztas(i, j));
+            }
             jatekterElem.appendChild(mezo);
         }
+    }
+}
+
+function kezdoPozicioValasztas(x, y) {
+    if (lepesekSzama === 10) {
+        jatekosPozicio = { x, y };
+        if (palya[x][y].tipus === 'gyumolcs') {
+            gyumolcsokSzama++;
+            palya[x][y] = { tipus: 'ures' };
+        }
+        gyumolcsokElem.textContent = gyumolcsokSzama;
+        palyaKirajzolasa();
     }
 }
 
@@ -96,6 +112,8 @@ function jatekVege() {
     }
 }
 
+let jelenlegiPalya = [];
+
 function ujraindit(ujPalya = true) {
     lepesekSzama = 10;
     gyumolcsokSzama = 0;
@@ -104,17 +122,22 @@ function ujraindit(ujPalya = true) {
 
     if (ujPalya) {
         palyaGeneralasa();
+        jelenlegiPalya = JSON.parse(JSON.stringify(palya));
+    } else {
+        palya = JSON.parse(JSON.stringify(jelenlegiPalya));
     }
     
-    jatekosPozicio = { x: Math.floor(palyaMeret / 2), y: Math.floor(palyaMeret / 2) };
+    jatekosPozicio = { x: -1, y: -1 }; // Kezdőpozíció nincs beállítva
     
     palyaKirajzolasa();
     lepesekElem.textContent = lepesekSzama;
     gyumolcsokElem.textContent = gyumolcsokSzama;
 }
 
+document.getElementById('ujra').addEventListener('click', () => ujraindit(false));
+
 function kepessegAtlo() {
-    if (kepessegHasznalat.atlo > 0) {
+    if (kepessegHasznalat.atlo > 0 && lepesekSzama > 0) {
         const atlosOpciok = ` 
             <div class="atlos-opciok">
                 <button onclick="mozgasAtlosan(-1, -1)">↖ Balra fel</button>
@@ -126,6 +149,8 @@ function kepessegAtlo() {
         document.getElementById('abilities').insertAdjacentHTML('afterend', atlosOpciok);
         kepessegHasznalat.atlo--;
         kepessegekFrissitese();
+        lepesekSzama--;
+        lepesekElem.textContent = lepesekSzama;
     }
 }
 
@@ -140,7 +165,7 @@ function mozgasAtlosan(dx, dy) {
 }
 
 function kepessegTeleport() {
-    if (kepessegHasznalat.teleport > 0) {
+    if (kepessegHasznalat.teleport > 0 && lepesekSzama > 0) {
         jatekosPozicio = {
             x: Math.floor(Math.random() * palyaMeret),
             y: Math.floor(Math.random() * palyaMeret)
@@ -148,11 +173,13 @@ function kepessegTeleport() {
         jatekosMozgatasa('');
         kepessegHasznalat.teleport--;
         kepessegekFrissitese();
+        lepesekSzama--;
+        lepesekElem.textContent = lepesekSzama;
     }
 }
 
 function kepessegSzomszed() {
-    if (kepessegHasznalat.szomszed > 0) {
+    if (kepessegHasznalat.szomszed > 0 && lepesekSzama > 0) {
         let szomszedok = [
             { x: jatekosPozicio.x - 1, y: jatekosPozicio.y },
             { x: jatekosPozicio.x + 1, y: jatekosPozicio.y },
@@ -172,6 +199,8 @@ function kepessegSzomszed() {
         palyaKirajzolasa();
         kepessegHasznalat.szomszed--;
         kepessegekFrissitese();
+        lepesekSzama--;
+        lepesekElem.textContent = lepesekSzama;
     }
 }
 

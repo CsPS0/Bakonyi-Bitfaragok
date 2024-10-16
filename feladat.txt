@@ -1,0 +1,54 @@
+a. Az  oldal  betöltésekor  generálódjon  egy  pálya,  minden  mezőben  egy  véletlen 
+generált számmal. 
+
+b. Legyen egy megadott lépésszám, amit az oldal ki is jelez. Ennyi körünk van minél 
+több gyümölcsöt összeszedni. 
+
+c. Valahogy jelöljétek, hogy melyik mezőn áll éppen a játékos.  
+
+d. A játék legelején választhassuk ki, hogy melyik mezőről szeretnénk indulni. Az ott 
+található gyümölcsöket egyből leszüreteljük, de ez még nem számít lépésnek. 
+
+e. Innentől kezdve minden lépéssel csak fel/le/jobbra/balra léphetünk egyet. 
+
+f. Amikor egy mezőre odalépünk, az ott található  gyümölcsöket  leszüreteljük. Az 
+összesített mennyiség mindig legyen látható. 
+
+g. Ha  a  lépések  elfogytak,  akkor  érjen  véget  a  játék  és  jelenítse  meg  a  végső 
+pontszámot. 
+
+h. Lehessen  új  próbálkozást  kérni  ugyanazon  a  pályán,  az  eredeti  értékek 
+visszaállításával. Ilyenkor az eddigi próbálkozások közül a legjobbat jelenítse meg 
+az oldal emlékeztetőnek. 
+
+i. Legyen  2-3  különleges  képesség,  melyek  egyszer-egyszer  aktiválhatóak  a  játék 
+során.  Lehet  kreatívnak  lenni  a  képességekkel,  és  azzal  is  lehet  variálni,  hogy 
+melyiknek a használata vesz el lépést. Pár ötlet, de nyugodtan lehet mást is kitalálni: 
+átlós  mozgás,  teleportálás  másik  mezőre,  ugrás  2-3  mező  távolságra,  1-1 
+gyümölcsnyi  szüret  a  szomszédos  mezőkről,  helyben  maradva  szüretelés 
+valamelyik szomszéd mezőről. 
+
+j. Valósítsatok  meg  stílusos  megjelenítést.  Például  lehetnek  változatos  típusú 
+gyümölcsök, látszódhat a különbség a gyümölcsökkel teli fák és a már leszüreteltek 
+között.
+
+
+
+
+
+Javítást kérek ezekben:
+
+1. Működés
+    - amíg nincs lehelyezve a játékos, addig nem lehet használni a képességeket (+szürkék amedig nincs lehelyezve a játékos)
+    - a játékos, csak egyszer helyezhető le, (mármint a nyilas [fel, le, jobbra, balra] lépkedéssel mozoghat!)
+    - az újrakezdés legyen kétrészre osztva:
+        - "Új Játék": úl pálya, új játékos elhejezés
+        - "Újrapróbálkozás": jelenlegi pálya resetelve a játékost újra le lehet tenni
+2. Kinézet
+    - A sőtétgomb (a nap és hold ikonnal együtt) legyen jobb fent
+    - A tutorialgomb legyen balfent
+    - A focim maradjon középen
+        - Responzívításnál a tutorial gomb a focim alatt, a sötétítő=világosító pedig a tutorial gomb alatt legyen
+3. Tutorial ablak
+    - A tutorial ablak legyen szebb, és jobban kínéző, legyeb benne jobb magyarázat
+    - A kódókat majd egybe írd le kérlek (külön-külön css, html, js)
