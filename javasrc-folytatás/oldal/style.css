@@ -290,6 +290,22 @@ body.sotet-mod .kepesseg-hasznalat {
     margin-bottom: 10px;
 }
 
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #tutorialGomb {
+        order: 1;
+        margin-bottom: 10px;
+    }
+
+    #sotetGomb {
+        order: 2;
+    }
+}
+
 @media (max-width: 600px) {
     .fejlec {
         flex-direction: column;
