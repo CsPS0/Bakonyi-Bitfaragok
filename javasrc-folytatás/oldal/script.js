@@ -49,7 +49,6 @@ function palyaKirajzolasa() {
             if (i === jatekosPozicio.x && j === jatekosPozicio.y) {
                 mezo.classList.add('jatekos');
             }
-            // Hozzáadjuk a kezdőpozíció kiválasztásának lehetőségét
             if (lepesekSzama === 10) {
                 mezo.addEventListener('click', () => kezdoPozicioValasztas(i, j));
             }
@@ -127,7 +126,7 @@ function ujraindit(ujPalya = true) {
         palya = JSON.parse(JSON.stringify(jelenlegiPalya));
     }
     
-    jatekosPozicio = { x: -1, y: -1 }; // Kezdőpozíció nincs beállítva
+    jatekosPozicio = { x: -1, y: -1 };
     
     palyaKirajzolasa();
     lepesekElem.textContent = lepesekSzama;
