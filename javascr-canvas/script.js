@@ -24,11 +24,18 @@ function drawCities() {
   cities.forEach(city => {
     ctx.beginPath();
     ctx.arc(city.x, city.y, cityRadius, 0, 2 * Math.PI);
-    ctx.fillStyle = city.served ? 'green' : 'red';
+    ctx.fillStyle = city.served ? '#28a745' : '#dc3545';
+    ctx.shadowColor = 'rgba(0, 0, 0, 0.2)';
+    ctx.shadowBlur = 8;
     ctx.fill();
+    ctx.shadowBlur = 0;
+    ctx.strokeStyle = '#333';
     ctx.stroke();
-    ctx.fillStyle = 'black';
+    
+    ctx.fillStyle = 'white';
+    ctx.font = 'bold 16px Roboto';
     ctx.fillText(city.battery, city.x - 5, city.y + 5);
+
     if (city.type === 'double') {
       ctx.fillText(city.battery2, city.x - 5, city.y + 20);
     }
@@ -39,15 +46,21 @@ function drawWorkshops() {
   workshops.forEach(workshop => {
     ctx.beginPath();
     ctx.arc(workshop.x, workshop.y, workshopRadius, 0, 2 * Math.PI);
-    ctx.fillStyle = 'blue';
+    ctx.fillStyle = '#007bff';
+    ctx.shadowColor = 'rgba(0, 0, 0, 0.3)';
+    ctx.shadowBlur = 8;
     ctx.fill();
+    ctx.shadowBlur = 0;
+    ctx.strokeStyle = '#333';
     ctx.stroke();
+    
     ctx.beginPath();
     ctx.arc(workshop.x, workshop.y, serviceRadius, 0, 2 * Math.PI);
-    ctx.strokeStyle = 'rgba(0, 0, 255, 0.3)';
+    ctx.strokeStyle = 'rgba(0, 123, 255, 0.2)';
     ctx.stroke();
-    ctx.strokeStyle = 'black';
+
     ctx.fillStyle = 'white';
+    ctx.font = 'bold 16px Roboto';
     ctx.fillText(workshop.type, workshop.x - 5, workshop.y + 5);
   });
 }
