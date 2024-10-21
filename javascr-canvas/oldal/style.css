@@ -21,6 +21,40 @@ h1 {
     margin-bottom: 30px;
 }
 
+.sotet-kapcsolo {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.sotet-kapcsolo:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.nap-ikon, .hold-ikon {
+    width: 24px;
+    height: 24px;
+    fill: #2c3e50;
+}
+
+body:not(.sotet-mod) .nap-ikon,
+body.sotet-mod .hold-ikon {
+    display: none;
+}
+
+body:not(.sotet-mod) .hold-ikon,
+body.sotet-mod .nap-ikon {
+    display: inline-block;
+}
+
+body.sotet-mod .nap-ikon,
+body.sotet-mod .hold-ikon {
+    fill: #ffffff;
+}
+
 #feladvanykivalaszto {
     margin-bottom: 20px;
 }
