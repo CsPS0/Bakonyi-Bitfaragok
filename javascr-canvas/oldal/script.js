@@ -182,4 +182,22 @@ document.getElementById('megoldasEllenorzese').addEventListener('click', () => {
     }
 });
 
+// Sötét mód
+const sotetGomb = document.getElementById('sotetGomb');
+const napIkon = document.querySelector('.nap-ikon');
+const holdIkon = document.querySelector('.hold-ikon');
+
+if (localStorage.getItem('sotet-mod') === 'enabled') {
+    document.body.classList.add('sotet-mod');
+}
+
+sotetGomb.addEventListener('click', () => {
+    document.body.classList.toggle('sotet-mod');
+    if (document.body.classList.contains('sotet-mod')) {
+        localStorage.setItem('sotet-mod', 'enabled');
+    } else {
+        localStorage.setItem('sotet-mod', 'disabled');
+    }
+});
+
 feladvanybetoltes(0);
