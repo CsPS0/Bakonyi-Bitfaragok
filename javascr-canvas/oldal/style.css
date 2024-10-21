@@ -1,51 +1,84 @@
 body {
     text-align: center;
     font-family: 'Roboto', sans-serif;
-    background-color: #f4f4f9;
+    background-color: #f0f4f8;
     margin: 0;
-    padding: 0;
+    padding: 20px;
+    color: #333;
 }
 
 h1 {
-    color: #333;
+    color: #2c3e50;
     margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+#feladvanykivalaszto {
+    margin-bottom: 20px;
+}
+
+#feladvanykivalaszto label, #feladvanykivalaszto select, #feladvanykivalaszto button {
+    margin: 0 10px;
 }
 
 #jatekVaszon {
-    border: 5px solid #444;
+    border: 5px solid #34495e;
     border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     display: block;
-    margin: 30px auto;
-    background-color: #fff;
+    margin: 0 auto 30px;
+    background-color: #ecf0f1;
+}
+
+#muhelyek {
+    margin-bottom: 20px;
+}
+
+#muhelyek button {
+    margin: 0 5px;
+    padding: 10px 15px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#muhelyek button:hover {
+    background-color: #2980b9;
+}
+
+#muhelyek button:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
 }
 
 #megoldasEllenorzese {
-    background-color: #4CAF50;
+    background-color: #2ecc71;
     color: white;
     border: none;
-    padding: 15px 30px;
+    padding: 12px 24px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin-top: 10px;
-    border-radius: 8px;
+    margin-top: 20px;
+    border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 #megoldasEllenorzese:hover {
-    background-color: #45a049;
+    background-color: #27ae60;
 }
 
 #allapot {
     margin-top: 20px;
     font-size: 18px;
-    color: #444;
-}
-
-canvas {
-    display: block;
-    margin: 0 auto;
+    color: #2c3e50;
+    padding: 10px;
+    background-color: #e8f4fd;
+    border-radius: 6px;
+    display: inline-block;
 }
