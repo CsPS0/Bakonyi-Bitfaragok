@@ -1,30 +1,30 @@
-const canvas = document.getElementById('gameCanvas');
-const ctx = canvas.getContext('2d');
+const vaszon = document.getElementById('jatekVaszon');
+const ctx = vaszon.getContext('2d');
 
-const cityRadius = 20;
-const workshopRadius = 30;
-const serviceRadius = 100;
+const varosSugar = 20;
+const muhelySugar = 30;
+const szervizSugar = 100;
 
-let cities = [
-  { x: 150, y: 100, battery: 'A', type: 'single', served: false },
-  { x: 400, y: 200, battery: 'B', type: 'single', served: false },
-  { x: 600, y: 400, battery: 'C', type: 'single', served: false },
-  { x: 200, y: 500, battery: 'A', type: 'double', battery2: 'B', served: false },
+let varosok = [
+  { x: 150, y: 100, akkumulátor: 'A', tipus: 'egyes', kiszolgalva: false },
+  { x: 400, y: 200, akkumulátor: 'B', tipus: 'egyes', kiszolgalva: false },
+  { x: 600, y: 400, akkumulátor: 'C', tipus: 'egyes', kiszolgalva: false },
+  { x: 200, y: 500, akkumulátor: 'A', tipus: 'kettes', akkumulátor2: 'B', kiszolgalva: false },
 ];
 
-let workshops = [];
-let maxWorkshops = 3;
-let availableWorkshops = [
-  { type: 'A', placed: false },
-  { type: 'B', placed: false },
-  { type: 'C', placed: false }
+let muhelyek = [];
+let maxMuhelyek = 3;
+let elerhetoMuhelyek = [
+  { tipus: 'A', elhelyezve: false },
+  { tipus: 'B', elhelyezve: false },
+  { tipus: 'C', elhelyezve: false }
 ];
 
-function drawCities() {
-  cities.forEach(city => {
+function rajzolVarosok() {
+  varosok.forEach(varos => {
     ctx.beginPath();
-    ctx.arc(city.x, city.y, cityRadius, 0, 2 * Math.PI);
-    ctx.fillStyle = city.served ? '#28a745' : '#dc3545';
+    ctx.arc(varos.x, varos.y, varosSugar, 0, 2 * Math.PI);
+    ctx.fillStyle = varos.kiszolgalva ? '#28a745' : '#dc3545';
     ctx.shadowColor = 'rgba(0, 0, 0, 0.2)';
     ctx.shadowBlur = 8;
     ctx.fill();
@@ -34,18 +34,18 @@ function drawCities() {
     
     ctx.fillStyle = 'white';
     ctx.font = 'bold 16px Roboto';
-    ctx.fillText(city.battery, city.x - 5, city.y + 5);
+    ctx.fillText(varos.akkumulátor, varos.x - 5, varos.y + 5);
 
-    if (city.type === 'double') {
-      ctx.fillText(city.battery2, city.x - 5, city.y + 20);
+    if (varos.tipus === 'kettes') {
+      ctx.fillText(varos.akkumulátor2, varos.x - 5, varos.y + 20);
     }
   });
 }
 
-function drawWorkshops() {
-  workshops.forEach(workshop => {
+function rajzolMuhelyek() {
+  muhelyek.forEach(muhely => {
     ctx.beginPath();
-    ctx.arc(workshop.x, workshop.y, workshopRadius, 0, 2 * Math.PI);
+    ctx.arc(muhely.x, muhely.y, muhelySugar, 0, 2 * Math.PI);
     ctx.fillStyle = '#007bff';
     ctx.shadowColor = 'rgba(0, 0, 0, 0.3)';
     ctx.shadowBlur = 8;
@@ -55,24 +55,24 @@ function drawWorkshops() {
     ctx.stroke();
     
     ctx.beginPath();
-    ctx.arc(workshop.x, workshop.y, serviceRadius, 0, 2 * Math.PI);
+    ctx.arc(muhely.x, muhely.y, szervizSugar, 0, 2 * Math.PI);
     ctx.strokeStyle = 'rgba(0, 123, 255, 0.2)';
     ctx.stroke();
 
     ctx.fillStyle = 'white';
     ctx.font = 'bold 16px Roboto';
-    ctx.fillText(workshop.type, workshop.x - 5, workshop.y + 5);
+    ctx.fillText(muhely.tipus, muhely.x - 5, muhely.y + 5);
   });
 }
 
-function checkCityServed(city) {
-  return workshops.some(workshop => {
-    const distance = Math.hypot(city.x - workshop.x, city.y - workshop.y);
-    if (distance <= serviceRadius) {
-      if (city.type === 'single' && workshop.type === city.battery) {
+function ellenorizVarosKiszolgalt(varos) {
+  return muhelyek.some(muhely => {
+    const tavolsag = Math.hypot(varos.x - muhely.x, varos.y - muhely.y);
+    if (tavolsag <= szervizSugar) {
+      if (varos.tipus === 'egyes' && muhely.tipus === varos.akkumulátor) {
         return true;
-      } else if (city.type === 'double' && 
-        (workshop.type === city.battery || workshop.type === city.battery2)) {
+      } else if (varos.tipus === 'kettes' && 
+        (muhely.tipus === varos.akkumulátor || muhely.tipus === varos.akkumulátor2)) {
         return true;
       }
     }
@@ -80,43 +80,43 @@ function checkCityServed(city) {
   });
 }
 
-function updateCityStatus() {
-  cities.forEach(city => {
-    city.served = checkCityServed(city);
+function frissitVarosAllapot() {
+  varosok.forEach(varos => {
+    varos.kiszolgalva = ellenorizVarosKiszolgalt(varos);
   });
 }
 
-function draw() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  drawCities();
-  drawWorkshops();
+function rajzol() {
+  ctx.clearRect(0, 0, vaszon.width, vaszon.height);
+  rajzolVarosok();
+  rajzolMuhelyek();
 }
 
-canvas.addEventListener('click', (e) => {
-  if (workshops.length >= maxWorkshops) {
-    document.getElementById('status').innerText = "Nincs több elhelyezhető műhely.";
+vaszon.addEventListener('click', (e) => {
+  if (muhelyek.length >= maxMuhelyek) {
+    document.getElementById('allapot').innerText = "Nincs több elhelyezhető műhely.";
     return;
   }
 
   const x = e.offsetX;
   const y = e.offsetY;
 
-  let selectedWorkshop = availableWorkshops.find(w => !w.placed);
-  if (selectedWorkshop) {
-    workshops.push({ x, y, type: selectedWorkshop.type });
-    selectedWorkshop.placed = true;
-    updateCityStatus();
-    draw();
+  let kivalasztottMuhely = elerhetoMuhelyek.find(m => !m.elhelyezve);
+  if (kivalasztottMuhely) {
+    muhelyek.push({ x, y, tipus: kivalasztottMuhely.tipus });
+    kivalasztottMuhely.elhelyezve = true;
+    frissitVarosAllapot();
+    rajzol();
   }
 });
 
-document.getElementById('checkSolution').addEventListener('click', () => {
-  const allServed = cities.every(city => city.served);
-  if (allServed) {
-    document.getElementById('status').innerText = "Gratulálok! Minden város ki van szolgálva.";
+document.getElementById('megoldasEllenorzese').addEventListener('click', () => {
+  const mindenKiszolgalva = varosok.every(varos => varos.kiszolgalva);
+  if (mindenKiszolgalva) {
+    document.getElementById('allapot').innerText = "Gratulálok! Minden város ki van szolgálva.";
   } else {
-    document.getElementById('status').innerText = "Nem minden város van kiszolgálva.";
+    document.getElementById('allapot').innerText = "Nem minden város van kiszolgálva.";
   }
 });
 
-draw();
+rajzol();

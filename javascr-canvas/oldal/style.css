@@ -6,13 +6,12 @@ body {
     padding: 0;
 }
 
-
 h1 {
     color: #333;
     margin-top: 20px;
 }
 
-#gameCanvas {
+#jatekVaszon {
     border: 5px solid #444;
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -21,7 +20,7 @@ h1 {
     background-color: #fff;
 }
 
-#checkSolution {
+#megoldasEllenorzese {
     background-color: #4CAF50;
     color: white;
     border: none;
@@ -36,11 +35,11 @@ h1 {
     transition: background-color 0.3s ease;
 }
 
-#checkSolution:hover {
+#megoldasEllenorzese:hover {
     background-color: #45a049;
 }
 
-#status {
+#allapot {
     margin-top: 20px;
     font-size: 18px;
     color: #444;
