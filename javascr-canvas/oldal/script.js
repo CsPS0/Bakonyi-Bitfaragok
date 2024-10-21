@@ -1,29 +1,72 @@
-const vászon = document.getElementById('jatekvászon');
-const ctx = vászon.getContext('2d');
+const vaszon = document.getElementById('jatekVaszon');
+const ctx = vaszon.getContext('2d');
 
-const varosSugara = 20;
-const muhelySugara = 30;
+const varosSugar = 20;
+const muhelySugar = 30;
 const szolgaltatasiKor = 100;
 
-let varosok = [
-    { x: 150, y: 100, akkumulator: 'A', tipus: 'egyszeres', kiszolgalva: false },
-    { x: 400, y: 200, akkumulator: 'B', tipus: 'egyszeres', kiszolgalva: false },
-    { x: 600, y: 400, akkumulator: 'C', tipus: 'egyszeres', kiszolgalva: false },
-    { x: 200, y: 500, akkumulator: 'A', tipus: 'dupla', akkumulator2: 'B', kiszolgalva: false },
-];
-
+let varosok = [];
 let muhelyek = [];
 let maxMuhelyek = 3;
-let elerhetoMuhelyek = [
-    { tipus: 'A', elhelyezett: false },
-    { tipus: 'B', elhelyezett: false },
-    { tipus: 'C', elhelyezett: false }
+let elerhetoMuhelyek = [];
+
+const feladvanyek = [
+    {
+        varosok: [
+            { x: 150, y: 100, akkumulator: 'A', tipus: 'egyszeres' },
+            { x: 400, y: 200, akkumulator: 'B', tipus: 'egyszeres' },
+            { x: 600, y: 400, akkumulator: 'C', tipus: 'egyszeres' }
+        ],
+        elerhetoMuhelyek: [
+            { tipus: 'A' },
+            { tipus: 'B' },
+            { tipus: 'C' }
+        ]
+    },
+    {
+        varosok: [
+            { x: 150, y: 100, akkumulator: 'A', tipus: 'egyszeres' },
+            { x: 400, y: 200, akkumulator: 'B', tipus: 'egyszeres' },
+            { x: 600, y: 400, akkumulator: 'C', tipus: 'egyszeres' },
+            { x: 200, y: 500, akkumulator: 'A', tipus: 'dupla', akkumulator2: 'B' }
+        ],
+        elerhetoMuhelyek: [
+            { tipus: 'A' },
+            { tipus: 'B' },
+            { tipus: 'C' }
+        ]
+    },
+    {
+        varosok: [
+            { x: 100, y: 100, akkumulator: 'A', tipus: 'egyszeres' },
+            { x: 300, y: 200, akkumulator: 'B', tipus: 'egyszeres' },
+            { x: 500, y: 300, akkumulator: 'C', tipus: 'egyszeres' },
+            { x: 700, y: 400, akkumulator: 'A', tipus: 'dupla', akkumulator2: 'C' },
+            { x: 200, y: 500, akkumulator: 'B', tipus: 'dupla', akkumulator2: 'C' }
+        ],
+        elerhetoMuhelyek: [
+            { tipus: 'A' },
+            { tipus: 'B' },
+            { tipus: 'C' },
+            { tipus: 'A' }
+        ]
+    }
 ];
+
+function feladvanybetoltes(index) {
+    const feladvany = feladvanyek[index];
+    varosok = feladvany.varosok.map(v => ({...v, kiszolgalva: false}));
+    elerhetoMuhelyek = feladvany.elerhetoMuhelyek.map(m => ({...m, elhelyezett: false}));
+    muhelyek = [];
+    maxMuhelyek = elerhetoMuhelyek.length;
+    muhelyekFrissitese();
+    rajzol();
+}
 
 function varosokRajzolasa() {
     varosok.forEach(varos => {
         ctx.beginPath();
-        ctx.arc(varos.x, varos.y, varosSugara, 0, 2 * Math.PI);
+        ctx.arc(varos.x, varos.y, varosSugar, 0, 2 * Math.PI);
         ctx.fillStyle = varos.kiszolgalva ? '#28a745' : '#dc3545';
         ctx.shadowColor = 'rgba(0, 0, 0, 0.2)';
         ctx.shadowBlur = 8;
@@ -45,7 +88,7 @@ function varosokRajzolasa() {
 function muhelyekRajzolasa() {
     muhelyek.forEach(muhely => {
         ctx.beginPath();
-        ctx.arc(muhely.x, muhely.y, muhelySugara, 0, 2 * Math.PI);
+        ctx.arc(muhely.x, muhely.y, muhelySugar, 0, 2 * Math.PI);
         ctx.fillStyle = '#007bff';
         ctx.shadowColor = 'rgba(0, 0, 0, 0.3)';
         ctx.shadowBlur = 8;
@@ -86,35 +129,57 @@ function varosokFrissitese() {
     });
 }
 
+function muhelyekFrissitese() {
+    const muhelyekDiv = document.getElementById('muhelyek');
+    muhelyekDiv.innerHTML = '';
+    elerhetoMuhelyek.forEach((muhely, index) => {
+        const gomb = document.createElement('button');
+        gomb.textContent = `${muhely.tipus} műhely`;
+        gomb.disabled = muhely.elhelyezett;
+        gomb.addEventListener('click', () => muhelyKivalasztas(index));
+        muhelyekDiv.appendChild(gomb);
+    });
+}
+
+function muhelyKivalasztas(index) {
+    const kivalasztottMuhely = elerhetoMuhelyek[index];
+    if (!kivalasztottMuhely.elhelyezett) {
+        document.getElementById('allapot').innerText = "Kattints a vászonra a műhely elhelyezéséhez!";
+        vaszon.addEventListener('click', muhelyElhelyezes);
+        
+        function muhelyElhelyezes(e) {
+            const x = e.offsetX;
+            const y = e.offsetY;
+            muhelyek.push({ x, y, tipus: kivalasztottMuhely.tipus });
+            kivalasztottMuhely.elhelyezett = true;
+            vaszon.removeEventListener('click', muhelyElhelyezes);
+            document.getElementById('allapot').innerText = "";
+            varosokFrissitese();
+            muhelyekFrissitese();
+            rajzol();
+        }
+    }
+}
+
 function rajzol() {
-    ctx.clearRect(0, 0, vászon.width, vászon.height);
+    ctx.clearRect(0, 0, vaszon.width, vaszon.height);
     varosokRajzolasa();
     muhelyekRajzolasa();
 }
 
-vászon.addEventListener('click', (e) => {
-    if (muhelyek.length >= maxMuhelyek) {
-        document.getElementById('allapot').innerText = "Nincs több elhelyezhető műhely.";
-        return;
-    }
-
-    const x = e.offsetX;
-    const y = e.offsetY;
-
-    let kivalasztottMuhely = elerhetoMuhelyek.find(m => !m.elhelyezett);
-    if (kivalasztottMuhely) {
-        muhelyek.push({ x, y, tipus: kivalasztottMuhely.tipus });
-        kivalasztottMuhely.elhelyezett = true;
-        varosokFrissitese();
-        rajzol();
-    }
+document.getElementById('feladvanybetoltes').addEventListener('click', () => {
+    const index = parseInt(document.getElementById('feladvanylista').value) - 1;
+    feladvanybetoltes(index);
 });
 
 document.getElementById('megoldasEllenorzese').addEventListener('click', () => {
     const mindKiszolgalva = varosok.every(varos => varos.kiszolgalva);
-    document.getElementById('allapot').innerText = mindKiszolgalva ? 
-        "Gratulálok! Minden város ki van szolgálva." : 
-        "Nem minden város van kiszolgálva.";
+    if (mindKiszolgalva) {
+        document.getElementById('allapot').innerText = "Gratulálok! Minden város ki van szolgálva.";
+    } else {
+        const hianyosVarosok = varosok.filter(varos => !varos.kiszolgalva).map(varos => varos.akkumulator).join(', ');
+        document.getElementById('allapot').innerText = `Nem minden város van kiszolgálva. Hiányos városok: ${hianyosVarosok}`;
+    }
 });
 
-rajzol();
+feladvanybetoltes(0);

@@ -1,54 +1,32 @@
-a. Az  oldal  betöltésekor  generálódjon  egy  pálya,  minden  mezőben  egy  véletlen 
-generált számmal. 
+a. Jelenjenek  meg  a  térképen  városok,  amelyeknek  megvannak  az  igényei,  vagyis, 
+    hogy a lakosok melyik fajta akkumulátort használják a három közül (ez legyen is 
+    látható). 
 
-b. Legyen egy megadott lépésszám, amit az oldal ki is jelez. Ennyi körünk van minél 
-több gyümölcsöt összeszedni. 
+b.  A  játékos  tudjon  lehelyezni  műhelyeket.  Minden műhelyhez  legyen  adva,  hogy 
+    milyen típus akkumulátort tud cserélni. 
 
-c. Valahogy jelöljétek, hogy melyik mezőn áll éppen a játékos.  
+c.  A játékban legyen néhány kézzel elkészített feladvány 
 
-d. A játék legelején választhassuk ki, hogy melyik mezőről szeretnénk indulni. Az ott 
-található gyümölcsöket egyből leszüreteljük, de ez még nem számít lépésnek. 
+    i.  Lehessen kiválasztani, hogy melyik feladványt indítsa el a játék 
 
-e. Innentől kezdve minden lépéssel csak fel/le/jobbra/balra léphetünk egyet. 
+    ii.  A  feladványokban  a  városok  legyenek  fix  helyen,  mindegyik  1  akkumulátor 
+        típussal  (bonyolultabb  feladványban  lehet  olyan város is, ahova kettő típus  is 
+        kell) 
 
-f. Amikor egy mezőre odalépünk, az ott található  gyümölcsöket  leszüreteljük. Az 
-összesített mennyiség mindig legyen látható. 
+    iii. A feladvány mondja meg, hogy mennyi lehelyezhető műhelyünk van, és melyik 
+        milyen akkumulátort tud cserélni 
 
-g. Ha  a  lépések  elfogytak,  akkor  érjen  véget  a  játék  és  jelenítse  meg  a  végső 
-pontszámot. 
+d. Legyen egy adott távolág, ami a kiszolgálási sugár. Egy műhely csak akkor tud egy 
+    várost  ellátni  akkumulátorokkal,  ha  ezen a távolságon belül van, és a megfelelő 
+    típusú akkumulátort tudja kezelni. 
 
-h. Lehessen  új  próbálkozást  kérni  ugyanazon  a  pályán,  az  eredeti  értékek 
-visszaállításával. Ilyenkor az eddigi próbálkozások közül a legjobbat jelenítse meg 
-az oldal emlékeztetőnek. 
+e. A játékos feladata, hogy a rendelkezésre álló műhelyeket a térképre rakja úgy, hogy 
+    minden város akkumulátor igényeit ki tudják szolgálni. 
 
-i. Legyen  2-3  különleges  képesség,  melyek  egyszer-egyszer  aktiválhatóak  a  játék 
-során.  Lehet  kreatívnak  lenni  a  képességekkel,  és  azzal  is  lehet  variálni,  hogy 
-melyiknek a használata vesz el lépést. Pár ötlet, de nyugodtan lehet mást is kitalálni: 
-átlós  mozgás,  teleportálás  másik  mezőre,  ugrás  2-3  mező  távolságra,  1-1 
-gyümölcsnyi  szüret  a  szomszédos  mezőkről,  helyben  maradva  szüretelés 
-valamelyik szomszéd mezőről. 
+    i. A lerakás közben a játék jelezze, hogy melyik városok vannak a határon belül. 
 
-j. Valósítsatok  meg  stílusos  megjelenítést.  Például  lehetnek  változatos  típusú 
-gyümölcsök, látszódhat a különbség a gyümölcsökkel teli fák és a már leszüreteltek 
-között.
+    ii.  A játék ellenőrizze a leadott megoldást, hogy tényleg minden város közelében 
+        van-e megfelelő műhely. 
 
-
-
-
-
-Javítást kérek ezekben:
-
-1. Működés
-    - amíg nincs lehelyezve a játékos, addig nem lehet használni a képességeket (+szürkék amedig nincs lehelyezve a játékos)
-    - a játékos, csak egyszer helyezhető le, (mármint a nyilas [fel, le, jobbra, balra] lépkedéssel mozoghat!)
-    - az újrakezdés legyen kétrészre osztva:
-        - "Új Játék": úl pálya, új játékos elhejezés
-        - "Újrapróbálkozás": jelenlegi pálya resetelve a játékost újra le lehet tenni
-2. Kinézet
-    - A sőtétgomb (a nap és hold ikonnal együtt) legyen jobb fent
-    - A tutorialgomb legyen balfent
-    - A focim maradjon középen
-        - Responzívításnál a tutorial gomb a focim alatt, a sötétítő=világosító pedig a tutorial gomb alatt legyen
-3. Tutorial ablak
-    - A tutorial ablak legyen szebb, és jobban kínéző, legyeb benne jobb magyarázat
-    - A kódókat majd egybe írd le kérlek (külön-külön css, html, js)
+        (1) Ha valahol hiányt talál, jelezze 
+        (2) Ha minden jó, akkor gratuláljon a megoldáshoz
