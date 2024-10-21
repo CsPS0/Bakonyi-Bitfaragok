@@ -1,3 +1,9 @@
+* {
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
 body {
     text-align: center;
     font-family: 'Roboto', sans-serif;
@@ -5,6 +11,8 @@ body {
     margin: 0;
     padding: 20px;
     color: #333;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 h1 {
@@ -81,4 +89,65 @@ h1 {
     background-color: #e8f4fd;
     border-radius: 6px;
     display: inline-block;
+}
+
+@media (max-width: 768px) {
+    #feladvanykivalaszto label, #feladvanykivalaszto select, #feladvanykivalaszto button {
+        margin: 0 5px;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    #megoldasEllenorzese {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    #muhelyek button {
+        padding: 8px 10px;
+        margin: 5px 2px;
+    }
+}
+
+@media (max-width: 600px) {
+    #feladvanykivalaszto label, #feladvanykivalaszto select, #feladvanykivalaszto button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #jatekVaszon {
+        width: 100%;
+    }
+
+    #megoldasEllenorzese {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    #muhelyek button {
+        width: 100%;
+        padding: 8px 10px;
+        margin: 5px 0;
+    }
+}
+
+@media (max-width: 400px) {
+    h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    #allapot {
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    #megoldasEllenorzese {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    #muhelyek button {
+        padding: 6px 8px;
+    }
 }
