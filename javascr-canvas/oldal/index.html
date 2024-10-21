@@ -3,13 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Város és Műhely Játék</title>
+    <title>Akkumulátor Játék</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Akkumulátor Játék</h1>
+    <div id="feladvanykivalaszto">
+        <label for="feladvanylista">Válassz feladványt:</label>
+        <select id="feladvanylista">
+            <option value="1">1. feladvány</option>
+            <option value="2">2. feladvány</option>
+            <option value="3">3. feladvány</option>
+        </select>
+        <button id="feladvanybetoltes">Feladvány betöltése</button>
+    </div>
     <canvas id="jatekVaszon" width="800" height="600"></canvas>
+    <div id="muhelyek"></div>
     <button id="megoldasEllenorzese">Megoldás ellenőrzése</button>
     <div id="allapot"></div>
     <script src="script.js"></script>
