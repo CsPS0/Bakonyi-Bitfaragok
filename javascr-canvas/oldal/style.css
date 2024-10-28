@@ -77,6 +77,14 @@ body.sotet-mod .hold-ikon, body:not(.sotet-mod) .nap-ikon {
     transition: background-color 0.3s, color 0.3s;
 }
 
+body.sotet-mod #feladvanykivalaszto label, #feladvanykivalaszto select, #feladvanykivalaszto button {
+    margin: 0 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #555;
+    transition: background-color 0.3s, color 0.3s;
+}
+
 #feladvanykivalaszto button {
     background-color: #3498db;
     color: white;
@@ -91,6 +99,12 @@ body.sotet-mod #feladvanykivalaszto select, body.sotet-mod #feladvanykivalaszto 
     background-color: #444;
     color: white;
     border-color: #555;
+}
+
+body.sotet-mod #feladvanykivalaszto select, body.sotet-mod #feladvanykivalaszto button:hover {
+    background-color: #363636;
+    color: white;
+    border-color: #444444;
 }
 
 #jatekVaszon {
@@ -127,6 +141,10 @@ body.sotet-mod #muhelyek button {
     background-color: #555;
 }
 
+body.sotet-mod #muhelyek button:hover {
+    background-color: #333;
+}
+
 #megoldasEllenorzese {
     background-color: #2ecc71;
     color: white;
@@ -146,6 +164,10 @@ body.sotet-mod #muhelyek button {
 
 body.sotet-mod #megoldasEllenorzese {
     background-color: #3c763d;
+}
+
+body.sotet-mod #megoldasEllenorzese:hover {
+    background-color: #305e30;
 }
 
 #allapot {
