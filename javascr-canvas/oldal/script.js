@@ -12,46 +12,73 @@ let elerhetoMuhelyek = [];
 
 const feladvanyek = [
     {
+        // Nagyon könnyű: A, B, C telepek
         varosok: [
-            { x: 150, y: 100, akkumulator: 'A', tipus: 'egyszeres' },
-            { x: 400, y: 200, akkumulator: 'B', tipus: 'egyszeres' },
-            { x: 600, y: 400, akkumulator: 'C', tipus: 'egyszeres' }
+            { x: 321, y: 153, akkumulator: 'A', tipus: 'egyszeres' },
+            { x: 456, y: 278, akkumulator: 'B', tipus: 'egyszeres' },
+            { x: 689, y: 423, akkumulator: 'C', tipus: 'egyszeres' }
         ],
         elerhetoMuhelyek: [
-            { tipus: 'A' },
-            { tipus: 'B' },
-            { tipus: 'C' }
+            { tipus: 'A' }, { tipus: 'B' }, { tipus: 'C' }
         ]
     },
     {
+        // Könnyű: A, B, C, D telepek
         varosok: [
-            { x: 150, y: 100, akkumulator: 'A', tipus: 'egyszeres' },
-            { x: 400, y: 200, akkumulator: 'B', tipus: 'egyszeres' },
-            { x: 600, y: 400, akkumulator: 'C', tipus: 'egyszeres' },
-            { x: 200, y: 500, akkumulator: 'A', tipus: 'dupla', akkumulator2: 'B' }
+            { x: 135, y: 207, akkumulator: 'A', tipus: 'egyszeres' },
+            { x: 457, y: 350, akkumulator: 'B', tipus: 'egyszeres' },
+            { x: 234, y: 487, akkumulator: 'C', tipus: 'egyszeres' },
+            { x: 601, y: 112, akkumulator: 'D', tipus: 'egyszeres' }
         ],
         elerhetoMuhelyek: [
-            { tipus: 'A' },
-            { tipus: 'B' },
-            { tipus: 'C' }
+            { tipus: 'A' }, { tipus: 'B' }, { tipus: 'C' }, { tipus: 'D' }
         ]
     },
     {
+        // Közepes: A, B, C, D; valamelyiknek 2 is kell
         varosok: [
-            { x: 100, y: 100, akkumulator: 'A', tipus: 'egyszeres' },
-            { x: 300, y: 200, akkumulator: 'B', tipus: 'egyszeres' },
-            { x: 500, y: 300, akkumulator: 'C', tipus: 'egyszeres' },
-            { x: 700, y: 400, akkumulator: 'A', tipus: 'dupla', akkumulator2: 'C' },
-            { x: 200, y: 500, akkumulator: 'B', tipus: 'dupla', akkumulator2: 'C' }
+            { x: 211, y: 345, akkumulator: 'A', tipus: 'egyszeres' },
+            { x: 556, y: 212, akkumulator: 'B', tipus: 'egyszeres' },
+            { x: 678, y: 389, akkumulator: 'C', tipus: 'egyszeres' },
+            { x: 333, y: 512, akkumulator: 'D', tipus: 'dupla', akkumulator2: 'C' }
         ],
         elerhetoMuhelyek: [
-            { tipus: 'A' },
-            { tipus: 'B' },
-            { tipus: 'C' },
-            { tipus: 'A' }
+            { tipus: 'A' }, { tipus: 'B' }, { tipus: 'C' }, { tipus: 'D' }
+        ]
+    },
+    {
+        // Nehéz: A, B, C, D, E, F; legalább 2-nek 2 plusz akkumulátor kell
+        varosok: [
+            { x: 123, y: 654, akkumulator: 'A', tipus: 'egyszeres' },
+            { x: 412, y: 287, akkumulator: 'B', tipus: 'egyszeres' },
+            { x: 678, y: 434, akkumulator: 'C', tipus: 'egyszeres' },
+            { x: 567, y: 143, akkumulator: 'D', tipus: 'egyszeres' },
+            { x: 211, y: 547, akkumulator: 'E', tipus: 'dupla', akkumulator2: 'C' },
+            { x: 489, y: 333, akkumulator: 'F', tipus: 'dupla', akkumulator2: 'B' }
+        ],
+        elerhetoMuhelyek: [
+            { tipus: 'A' }, { tipus: 'B' }, { tipus: 'C' }, { tipus: 'D' }, { tipus: 'E' }, { tipus: 'F' }
+        ]
+    },
+    {
+        // Ultra Nehéz: A, B, C, D, E, F, G, H; valamelyiknek 3 kell, és legalább 2-nek 2db
+        varosok: [
+            { x: 222, y: 333, akkumulator: 'A', tipus: 'egyszeres' },
+            { x: 434, y: 678, akkumulator: 'B', tipus: 'egyszeres' },
+            { x: 566, y: 211, akkumulator: 'C', tipus: 'egyszeres' },
+            { x: 123, y: 478, akkumulator: 'D', tipus: 'egyszeres' },
+            { x: 390, y: 567, akkumulator: 'E', tipus: 'dupla', akkumulator2: 'D' },
+            { x: 512, y: 340, akkumulator: 'F', tipus: 'dupla', akkumulator2: 'C' },
+            { x: 211, y: 289, akkumulator: 'G', tipus: 'dupla', akkumulator2: 'A' },
+            { x: 678, y: 412, akkumulator: 'H', tipus: 'tripla', akkumulator2: 'B', akkumulator3: 'C' }
+        ],
+        elerhetoMuhelyek: [
+            { tipus: 'A' }, { tipus: 'B' }, { tipus: 'C' }, { tipus: 'D' }, { tipus: 'E' }, { tipus: 'F' }, { tipus: 'G' }, { tipus: 'H' }
         ]
     }
 ];
+
+
 
 function feladvanybetoltes(index) {
     const feladvany = feladvanyek[index];
@@ -81,9 +108,13 @@ function varosokRajzolasa() {
 
         if (varos.tipus === 'dupla') {
             ctx.fillText(varos.akkumulator2, varos.x - 5, varos.y + 20);
+        } else if (varos.tipus === 'tripla') {
+            ctx.fillText(varos.akkumulator2, varos.x - 5, varos.y + 20);
+            ctx.fillText(varos.akkumulator3, varos.x - 5, varos.y + 35); // Harmadik akkumulátor
         }
     });
 }
+
 
 function muhelyekRajzolasa() {
     muhelyek.forEach(muhely => {
@@ -171,6 +202,19 @@ document.getElementById('feladvanybetoltes').addEventListener('click', () => {
     const index = parseInt(document.getElementById('feladvanylista').value) - 1;
     feladvanybetoltes(index);
 });
+
+const feladvanylista = document.getElementById('feladvanylista');
+
+feladvanylista.addEventListener('change', () => {
+    const index = parseInt(feladvanylista.value) - 1;
+    const megerosites = confirm("Biztosan szeretnéd betölteni a " + (index + 1) + ". feladványt?");
+    if (megerosites) {
+        feladvanybetoltes(index);
+    } else {
+        feladvanylista.value = "";  // Opció törlése, ha nem töltik be
+    }
+});
+
 
 document.getElementById('megoldasEllenorzese').addEventListener('click', () => {
     const mindKiszolgalva = varosok.every(varos => varos.kiszolgalva);
