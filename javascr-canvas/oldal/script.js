@@ -69,7 +69,7 @@ const feladvanyek = [
             { x: 123, y: 478, akkumulator: 'D', tipus: 'egyszeres' },
             { x: 390, y: 567, akkumulator: 'E', tipus: 'dupla', akkumulator2: 'D' },
             { x: 512, y: 340, akkumulator: 'F', tipus: 'dupla', akkumulator2: 'C' },
-            { x: 211, y: 289, akkumulator: 'G', tipus: 'dupla', akkumulator2: 'A' },
+            { x: 211, y: 432, akkumulator: 'G', tipus: 'dupla', akkumulator2: 'A' },
             { x: 678, y: 412, akkumulator: 'H', tipus: 'tripla', akkumulator2: 'B', akkumulator3: 'C' }
         ],
         elerhetoMuhelyek: [
@@ -92,9 +92,22 @@ function feladvanybetoltes(index) {
 
 function varosokRajzolasa() {
     varosok.forEach(varos => {
+        const kiszolgalasiAllapot = varosKiszolgalasEllenorzes(varos);
+        
         ctx.beginPath();
         ctx.arc(varos.x, varos.y, varosSugar, 0, 2 * Math.PI);
-        ctx.fillStyle = varos.kiszolgalva ? '#28a745' : '#dc3545';
+        
+        // Szín beállítása a kiszolgálási állapot alapján
+        if (kiszolgalasiAllapot === 'teljes') {
+            ctx.fillStyle = '#28a745';  // Zöld teljes kiszolgálásnál
+        } else if (kiszolgalasiAllapot === 'reszleges' && varos.tipus === 'dupla') {
+            ctx.fillStyle = '#800080';  // Lila részleges duplánál (2/1)
+        } else if (kiszolgalasiAllapot === 'reszleges' && varos.tipus === 'tripla') {
+            ctx.fillStyle = '#FFD700';  // Sárga részleges triplánál (3/2)
+        } else {
+            ctx.fillStyle = '#dc3545';  // Piros ha nincs kiszolgálva
+        }
+        
         ctx.shadowColor = 'rgba(0, 0, 0, 0.2)';
         ctx.shadowBlur = 8;
         ctx.fill();
@@ -110,11 +123,10 @@ function varosokRajzolasa() {
             ctx.fillText(varos.akkumulator2, varos.x - 5, varos.y + 20);
         } else if (varos.tipus === 'tripla') {
             ctx.fillText(varos.akkumulator2, varos.x - 5, varos.y + 20);
-            ctx.fillText(varos.akkumulator3, varos.x - 5, varos.y + 35); // Harmadik akkumulátor
+            ctx.fillText(varos.akkumulator3, varos.x - 5, varos.y + 35);
         }
     });
 }
-
 
 function muhelyekRajzolasa() {
     muhelyek.forEach(muhely => {
@@ -140,19 +152,37 @@ function muhelyekRajzolasa() {
 }
 
 function varosKiszolgalasEllenorzes(varos) {
-    return muhelyek.some(muhely => {
+    let kiszolgaltTipusok = 0;
+    
+    muhelyek.forEach(muhely => {
         const tavolsag = Math.hypot(varos.x - muhely.x, varos.y - muhely.y);
+        
         if (tavolsag <= szolgaltatasiKor) {
             if (varos.tipus === 'egyszeres' && muhely.tipus === varos.akkumulator) {
-                return true;
+                kiszolgaltTipusok = 1;  // Teljes kiszolgálás egyszeresnél
             } else if (varos.tipus === 'dupla' && 
-                (muhely.tipus === varos.akkumulator || muhely.tipus === varos.akkumulator2)) {
-                return true;
+                    (muhely.tipus === varos.akkumulator || muhely.tipus === varos.akkumulator2)) {
+                kiszolgaltTipusok += 1;  // Részleges kiszolgálás duplánál
+            } else if (varos.tipus === 'tripla' && 
+                    (muhely.tipus === varos.akkumulator || muhely.tipus === varos.akkumulator2 || muhely.tipus === varos.akkumulator3)) {
+                kiszolgaltTipusok += 1;  // Részleges kiszolgálás triplánál
             }
         }
-        return false;
     });
+    
+    if (varos.tipus === 'egyszeres' && kiszolgaltTipusok === 1) {
+        return 'teljes';
+    } else if (varos.tipus === 'dupla' && kiszolgaltTipusok === 2) {
+        return 'teljes';
+    } else if (varos.tipus === 'tripla' && kiszolgaltTipusok === 3) {
+        return 'teljes';
+    } else if ((varos.tipus === 'dupla' && kiszolgaltTipusok === 1) || (varos.tipus === 'tripla' && kiszolgaltTipusok === 2)) {
+        return 'reszleges';
+    } else {
+        return 'nincsKiszolgalva';
+    }
 }
+
 
 function varosokFrissitese() {
     varosok.forEach(varos => {
