@@ -220,6 +220,8 @@ function muhelyKivalasztas(index) {
     }
 }
 
+// this is the backup
+
 function rajzol() {
     ctx.clearRect(0, 0, vaszon.width, vaszon.height);
     varosokRajzolasa();
