@@ -35,6 +35,35 @@ body.sotet-mod h1 {
     color: #f0f4f8;
 }
 
+.modal {
+    display: none; /* Elrejtett alapértelmezésben */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+}
+
+.modal-tartalom {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.modal-bezar {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
 .sotet-kapcsolo {
     position: absolute;
     top: 10px;

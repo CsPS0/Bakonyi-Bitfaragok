@@ -65,7 +65,7 @@ const feladvanyek = [
         varosok: [
             { x: 222, y: 333, akkumulator: 'A', tipus: 'egyszeres' },
             { x: 434, y: 678, akkumulator: 'B', tipus: 'egyszeres' },
-            { x: 566, y: 211, akkumulator: 'C', tipus: 'egyszeres' },
+            { x: 678, y: 300, akkumulator: 'C', tipus: 'egyszeres' },
             { x: 123, y: 478, akkumulator: 'D', tipus: 'egyszeres' },
             { x: 390, y: 567, akkumulator: 'E', tipus: 'dupla', akkumulator2: 'D' },
             { x: 512, y: 340, akkumulator: 'F', tipus: 'dupla', akkumulator2: 'C' },
@@ -77,8 +77,6 @@ const feladvanyek = [
         ]
     }
 ];
-
-
 
 function feladvanybetoltes(index) {
     const feladvany = feladvanyek[index];
@@ -93,10 +91,10 @@ function feladvanybetoltes(index) {
 function varosokRajzolasa() {
     varosok.forEach(varos => {
         const kiszolgalasiAllapot = varosKiszolgalasEllenorzes(varos);
-        
+
         ctx.beginPath();
         ctx.arc(varos.x, varos.y, varosSugar, 0, 2 * Math.PI);
-        
+
         // Szín beállítása a kiszolgálási állapot alapján
         if (kiszolgalasiAllapot === 'teljes') {
             ctx.fillStyle = '#28a745';  // Zöld teljes kiszolgálásnál
@@ -107,14 +105,14 @@ function varosokRajzolasa() {
         } else {
             ctx.fillStyle = '#dc3545';  // Piros ha nincs kiszolgálva
         }
-        
+
         ctx.shadowColor = 'rgba(0, 0, 0, 0.2)';
         ctx.shadowBlur = 8;
         ctx.fill();
         ctx.shadowBlur = 0;
         ctx.strokeStyle = '#333';
         ctx.stroke();
-        
+
         ctx.fillStyle = 'white';
         ctx.font = 'bold 16px Roboto';
         ctx.fillText(varos.akkumulator, varos.x - 5, varos.y + 5);
@@ -139,7 +137,7 @@ function muhelyekRajzolasa() {
         ctx.shadowBlur = 0;
         ctx.strokeStyle = '#333';
         ctx.stroke();
-        
+
         ctx.beginPath();
         ctx.arc(muhely.x, muhely.y, szolgaltatasiKor, 0, 2 * Math.PI);
         ctx.strokeStyle = 'rgba(0, 123, 255, 0.2)';
@@ -153,10 +151,10 @@ function muhelyekRajzolasa() {
 
 function varosKiszolgalasEllenorzes(varos) {
     let kiszolgaltTipusok = 0;
-    
+
     muhelyek.forEach(muhely => {
         const tavolsag = Math.hypot(varos.x - muhely.x, varos.y - muhely.y);
-        
+
         if (tavolsag <= szolgaltatasiKor) {
             if (varos.tipus === 'egyszeres' && muhely.tipus === varos.akkumulator) {
                 kiszolgaltTipusok = 1;  // Teljes kiszolgálás egyszeresnél
@@ -169,7 +167,8 @@ function varosKiszolgalasEllenorzes(varos) {
             }
         }
     });
-    
+
+    // Részleges és teljes kiszolgálás ellenőrzése
     if (varos.tipus === 'egyszeres' && kiszolgaltTipusok === 1) {
         return 'teljes';
     } else if (varos.tipus === 'dupla' && kiszolgaltTipusok === 2) {
@@ -182,7 +181,6 @@ function varosKiszolgalasEllenorzes(varos) {
         return 'nincsKiszolgalva';
     }
 }
-
 
 function varosokFrissitese() {
     varosok.forEach(varos => {
@@ -207,7 +205,7 @@ function muhelyKivalasztas(index) {
     if (!kivalasztottMuhely.elhelyezett) {
         document.getElementById('allapot').innerText = "Kattints a vászonra a műhely elhelyezéséhez!";
         vaszon.addEventListener('click', muhelyElhelyezes);
-        
+
         function muhelyElhelyezes(e) {
             const x = e.offsetX;
             const y = e.offsetY;
@@ -245,14 +243,21 @@ feladvanylista.addEventListener('change', () => {
     }
 });
 
-
 document.getElementById('megoldasEllenorzese').addEventListener('click', () => {
-    const mindKiszolgalva = varosok.every(varos => varos.kiszolgalva);
-    if (mindKiszolgalva) {
+    let halottakSzama = 0;
+    varosok.forEach(varos => {
+        const kiszolgalasiAllapot = varosKiszolgalasEllenorzes(varos);
+
+        if (kiszolgalasiAllapot === 'nincsKiszolgalva') {
+            const lakosokSzama = Math.floor(Math.random() * 5000) + 1000; // 1000-5000 lakos
+            halottakSzama += lakosokSzama;
+        }
+    });
+
+    if (halottakSzama === 0) {
         document.getElementById('allapot').innerText = "Gratulálok! Minden város ki van szolgálva.";
     } else {
-        const hianyosVarosok = varosok.filter(varos => !varos.kiszolgalva).map(varos => varos.akkumulator).join(', ');
-        document.getElementById('allapot').innerText = `Nem minden város van kiszolgálva. Hiányos városok: ${hianyosVarosok}`;
+        document.getElementById('allapot').innerText = `Nem sikerült az összes várost kiszolgálni. ${halottakSzama} ember vesztette életét.`;
     }
 });
 

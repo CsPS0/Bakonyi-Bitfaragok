@@ -8,6 +8,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="segedsegModal" class="modal">
+        <div class="modal-tartalom">
+            <span id="modalBezaras" class="modal-bezar">&times;</span>
+            <h2 id="modalCim">Segítség, <span id="jatekosNevModal"></span>!</h2>
+            <p id="modalUzenet">A vihar elvitte az áramot, segítened kell az embereknek!</p>
+            <button id="modalRendben">Rendben, segítek!</button>
+        </div>
+    </div>    
     <header>
         <h1>Akkumulátor Játék</h1>
         <button id="sotetGomb" class="sotet-kapcsolo">
@@ -24,7 +32,7 @@
                 <option value="4">Nehéz</option>
                 <option value="5">Ultra Nehéz</option>
             </select>
-            <button id="feladvanybetoltes"></button>
+            <button id="feladvanybetoltes">Újrapróbálás</button>
         </div>
         <canvas id="jatekVaszon" width="800" height="600"></canvas>
         <div id="muhelyek"></div>
