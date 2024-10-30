@@ -36,7 +36,7 @@ body.sotet-mod h1 {
 }
 
 .modal {
-    display: none; /* Elrejtett alapértelmezésben */
+    display: none;
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -62,7 +62,6 @@ body.sotet-mod h1 {
     font-size: 24px;
     cursor: pointer;
 }
-
 
 .sotet-kapcsolo {
     position: absolute;
@@ -130,6 +129,10 @@ body.sotet-mod #feladvanykivalaszto label, #feladvanykivalaszto select, #feladva
 
 #feladvanykivalaszto button:hover {
     background-color: #2980b9;
+}
+
+#feladvanybetoltes {
+    display: none;
 }
 
 body.sotet-mod #feladvanykivalaszto select, body.sotet-mod #feladvanykivalaszto button {

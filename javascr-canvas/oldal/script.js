@@ -220,8 +220,6 @@ function muhelyKivalasztas(index) {
     }
 }
 
-// this is the backup
-
 function rajzol() {
     ctx.clearRect(0, 0, vaszon.width, vaszon.height);
     varosokRajzolasa();
@@ -241,7 +239,7 @@ feladvanylista.addEventListener('change', () => {
     if (megerosites) {
         feladvanybetoltes(index);
     } else {
-        feladvanylista.value = "";  // Opció törlése, ha nem töltik be
+        feladvanylista.value = "";
     }
 });
 
