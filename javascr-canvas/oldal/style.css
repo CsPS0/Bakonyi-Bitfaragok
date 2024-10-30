@@ -135,6 +135,10 @@ body.sotet-mod #feladvanykivalaszto label, #feladvanykivalaszto select, #feladva
     display: none;
 }
 
+#feladvanylista:hover {
+    cursor: pointer;
+}
+
 body.sotet-mod #feladvanykivalaszto select, body.sotet-mod #feladvanykivalaszto button {
     background-color: #444;
     color: white;
@@ -238,6 +242,7 @@ body.sotet-mod #allapot {
         width: 100%;
         height: auto;
     }
+    
     #megoldasEllenorzese, #feladvanykivalaszto {
         width: 100%;
     }

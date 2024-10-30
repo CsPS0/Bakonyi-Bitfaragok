@@ -39,7 +39,7 @@ const feladvanyek = [
         varosok: [
             { x: 211, y: 345, akkumulator: 'A', tipus: 'egyszeres' },
             { x: 556, y: 212, akkumulator: 'B', tipus: 'egyszeres' },
-            { x: 678, y: 389, akkumulator: 'C', tipus: 'egyszeres' },
+            { x: 453, y: 389, akkumulator: 'C', tipus: 'egyszeres' },
             { x: 333, y: 512, akkumulator: 'D', tipus: 'dupla', akkumulator2: 'C' }
         ],
         elerhetoMuhelyek: [
@@ -51,10 +51,10 @@ const feladvanyek = [
         varosok: [
             { x: 123, y: 654, akkumulator: 'A', tipus: 'egyszeres' },
             { x: 412, y: 287, akkumulator: 'B', tipus: 'egyszeres' },
-            { x: 678, y: 434, akkumulator: 'C', tipus: 'egyszeres' },
+            { x: 254, y: 396, akkumulator: 'C', tipus: 'egyszeres' },
             { x: 567, y: 143, akkumulator: 'D', tipus: 'egyszeres' },
-            { x: 211, y: 547, akkumulator: 'E', tipus: 'dupla', akkumulator2: 'C' },
-            { x: 489, y: 333, akkumulator: 'F', tipus: 'dupla', akkumulator2: 'B' }
+            { x: 134, y: 547, akkumulator: 'E', tipus: 'dupla', akkumulator2: 'C' },
+            { x: 489, y: 460, akkumulator: 'F', tipus: 'dupla', akkumulator2: 'B' }
         ],
         elerhetoMuhelyek: [
             { tipus: 'A' }, { tipus: 'B' }, { tipus: 'C' }, { tipus: 'D' }, { tipus: 'E' }, { tipus: 'F' }
@@ -64,10 +64,10 @@ const feladvanyek = [
         // Ultra Nehéz: A, B, C, D, E, F, G, H; valamelyiknek 3 kell, és legalább 2-nek 2db
         varosok: [
             { x: 222, y: 333, akkumulator: 'A', tipus: 'egyszeres' },
-            { x: 434, y: 678, akkumulator: 'B', tipus: 'egyszeres' },
+            { x: 578, y: 578, akkumulator: 'B', tipus: 'egyszeres' },
             { x: 678, y: 300, akkumulator: 'C', tipus: 'egyszeres' },
-            { x: 123, y: 478, akkumulator: 'D', tipus: 'egyszeres' },
-            { x: 390, y: 567, akkumulator: 'E', tipus: 'dupla', akkumulator2: 'D' },
+            { x: 246, y: 175, akkumulator: 'D', tipus: 'egyszeres' },
+            { x: 390, y: 74, akkumulator: 'E', tipus: 'dupla', akkumulator2: 'D' },
             { x: 512, y: 340, akkumulator: 'F', tipus: 'dupla', akkumulator2: 'C' },
             { x: 211, y: 432, akkumulator: 'G', tipus: 'dupla', akkumulator2: 'A' },
             { x: 678, y: 412, akkumulator: 'H', tipus: 'tripla', akkumulator2: 'B', akkumulator3: 'C' }
@@ -257,7 +257,7 @@ document.getElementById('megoldasEllenorzese').addEventListener('click', () => {
     if (halottakSzama === 0) {
         document.getElementById('allapot').innerText = "Gratulálok! Minden város ki van szolgálva.";
     } else {
-        document.getElementById('allapot').innerText = `Nem sikerült az összes várost kiszolgálni. ${halottakSzama} ember vesztette életét.`;
+        document.getElementById('allapot').innerText = `Nem sikerült az összes várost kiszolgálni. ${halottakSzama} ember vesztette életét az árvízben.`;
     }
 });
 
