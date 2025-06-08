@@ -44,11 +44,13 @@ Sikeres versenyzést kívánunk mindenkinek!
 * Solti Csongor Péter
 
 ## 🎉 Továbbjutások
-### I. Vigyázz,
+### I. Vigyázz ✅
 - [I. forduló](https://github.com/CsPS0/Bakonyi-Bitfaragok/tree/main/javasrc-bevezet%C3%A9s)
 - [II. forduló](https://github.com/CsPS0/Bakonyi-Bitfaragok/tree/main/javasrc-folytat%C3%A1s)
 - [III. forduló](https://github.com/CsPS0/Bakonyi-Bitfaragok/tree/main/javascr-canvas)
 
-### II. Kész,
+### II. Kész, ❌
+- Nem jutott tovább
 
-### III. Rajt!
+### III. Rajt! ❌
+- Nem jutott tovább
