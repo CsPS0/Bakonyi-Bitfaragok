@@ -1,37 +1,40 @@
-RPG-GAME/*/bin
-RPG-GAME/*/obj
-
-node_modules/
-
-dist/
-out/
-
+# Binary and media files
 *.log
 *.tmp
 *.bak
 *.swp
+apik.jpg
+csps.jpg
+ICON.webp
 
+# System files
 .DS_Store      # macOS
 Thumbs.db      # Windows
 Desktop.ini    # Windows
 
+# IDE and editor files
 .vscode/
 *.code-workspace
 *.vs
 
+# Environment and configuration
 .env
 .env.local
-
 config/local.json
+
+# Build and dependency directories
+RPG-GAME/*/bin
+RPG-GAME/*/obj
+node_modules/
+dist/
+out/
+
+# Personal and temporary files
 personal_script.sh
 secret.txt
-
 *.bak
 *.txt
 
+# Documents (currently commented out)
 # *.pdf
 # *.docx
-
-ICON.webp
-apik.jpg
-csps.jpg
