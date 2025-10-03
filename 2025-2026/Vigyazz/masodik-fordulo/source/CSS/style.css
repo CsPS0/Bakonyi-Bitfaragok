@@ -1,0 +1,315 @@
+/* Basic Setup */
+:root {
+    --imperial-black: #000000;
+    --imperial-dark-gray: #222222;
+    --imperial-gray: #333333;
+    --rebel-light-gray: #cccccc;
+    --rebel-orange: #ff7f00;
+    --rebel-blue: #00bfff;
+    --hit-red: #ff0000;
+    --empire-red: #d00000;
+
+    --sw-lightblue: #1da3ab;
+	--sw-darkgreen-shadow: #00311a;
+	--sw-text-primary: #d4b247;
+	--sw-text-primary-shadow: #280000;
+	--sw-background-color: #000000;
+}
+
+body {
+    background-color: var(--sw-background-color);
+    color: var(--rebel-light-gray);
+    font-family: 'Orbitron', sans-serif;
+    overflow: hidden; /* Re-added */
+    width: 100vw;
+	height: 100vh;
+	height: 100dvh;
+}
+
+/* Starry Background */
+body {
+    background: #000 url(https://www.transparenttextures.com/patterns/stardust.png);
+}
+
+/* Faction Menu */
+#faction-menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#faction-menu h2 {
+    font-size: 2em;
+    margin-bottom: 2em;
+    color: var(--rebel-orange);
+}
+
+.faction-buttons button {
+    font-size: 1.5em;
+    padding: 1em 2em;
+    margin: 0 1em;
+    border: 2px solid var(--rebel-orange);
+    background-color: transparent;
+    color: var(--rebel-orange);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.faction-buttons button:hover {
+    background-color: var(--rebel-orange);
+    color: var(--imperial-black);
+}
+
+/* Game Screen Layout */
+#game-screen {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr; /* Left, Center, Right */
+    gap: 20px;
+    padding: 20px;
+}
+
+#tutorial-panel,
+#scoreboard-panel {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid var(--rebel-orange);
+    padding: 15px;
+    border-radius: 8px;
+    color: var(--rebel-light-gray);
+    overflow-y: auto;
+}
+
+#game-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#tutorial-panel h2,
+#scoreboard-panel h2 {
+    color: var(--rebel-orange);
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#scoreboard-list {
+    list-style: none;
+    padding: 0;
+}
+
+#scoreboard-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+}
+
+#scoreboard-list li:last-child {
+    border-bottom: none;
+}
+
+#score-entry {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#score-entry input {
+    width: 80%;
+    padding: 8px;
+    margin-bottom: 10px;
+    background-color: var(--imperial-dark-gray);
+    border: 1px solid var(--rebel-orange);
+    color: var(--rebel-light-gray);
+    border-radius: 4px;
+}
+
+#score-entry button {
+    background-color: var(--rebel-orange);
+    color: var(--imperial-black);
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+/* Game Container */
+#game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+
+h1 {
+    color: var(--rebel-orange);
+}
+
+#grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 40px);
+    grid-template-rows: repeat(12, 40px);
+    gap: 2px;
+    background-color: var(--imperial-gray);
+    border: 10px solid var(--imperial-gray);
+}
+
+.grid-cell {
+    width: 40px;
+    height: 40px;
+    background-color: #555;
+    border: 1px solid var(--imperial-dark-gray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--rebel-blue);
+}
+
+.grid-cell:hover {
+    background-color: var(--rebel-light-gray);
+}
+
+#controls button {
+    background-color: var(--rebel-orange);
+    color: var(--imperial-black);
+}
+
+/* --- THEMES --- */
+
+/* Rebel Theme (Default) */
+.rebel-theme h1, .rebel-theme #faction-menu h2, .rebel-theme .faction-buttons button, .rebel-theme #tutorial-panel h2, .rebel-theme #scoreboard-panel h2, .rebel-theme #score-entry input {
+    color: var(--rebel-orange);
+    border-color: var(--rebel-orange);
+}
+
+.rebel-theme .faction-buttons button:hover {
+    background-color: var(--rebel-orange);
+    color: var(--imperial-black);
+}
+
+.rebel-theme #controls button, .rebel-theme #score-entry button {
+    background-color: var(--rebel-orange);
+    color: var(--imperial-black);
+}
+
+/* Empire Theme */
+.empire-theme h1, .empire-theme #faction-menu h2, .empire-theme .faction-buttons button, .empire-theme #tutorial-panel h2, .empire-theme #scoreboard-panel h2, .empire-theme #score-entry input {
+    color: var(--empire-red);
+    border-color: var(--empire-red);
+}
+
+.empire-theme .faction-buttons button:hover {
+    background-color: var(--empire-red);
+    color: var(--imperial-black);
+}
+
+.empire-theme #controls button, .empire-theme #score-entry button {
+    background-color: var(--empire-red);
+    color: var(--imperial-black);
+}
+
+
+/* Ship Destroyed Modal */
+#ship-destroyed-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+}
+
+.modal-content {
+    background-color: var(--imperial-dark-gray);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    border: 2px solid var(--rebel-orange);
+}
+
+.empire-theme .modal-content {
+    border-color: var(--empire-red);
+}
+
+#modal-ship-icon svg {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+}
+
+/* New Intro CSS */
+.sw-container {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	perspective: 500px;
+	transform-style: preserve-3d;
+	overflow: hidden;
+}
+
+.sw-crawl {
+	position: relative;
+	width: 500px;
+	margin: 0 auto;
+	will-change: transform, opacity;
+	transform-origin: 50% 100%;
+	opacity: 0;
+	visibility: hidden;
+}
+
+.sw-crawl .sw-text {
+    color: var(--sw-text-primary);
+    font-size: 2rem;
+    line-height: 2.4rem;
+    text-align: justify;
+    text-shadow: 2px 2px 2px var(--sw-text-primary-shadow);
+}
+
+.sw-crawl .sw-text.sw-episode,
+.sw-crawl .sw-text.sw-title {
+    text-align: center;
+}
+
+.sw-crawl .sw-text.sw-episode {
+    margin-bottom: 1rem;
+}
+
+.sw-crawl .sw-text.sw-title {
+    margin-bottom: 4rem;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+}
+
+.sw-text-intro {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	margin: 0;
+	width: 820px;
+	min-width: 820px;
+	max-width: 820px;
+	color: var(--sw-lightblue);
+	font-size: 4rem;
+	font-family: "Franklin Gothic Book", serif;
+	line-height: 6rem;
+	text-shadow: 2px 2px 2px var(--sw-darkgreen-shadow);
+	will-change: opacity;
+	opacity: 0;
+	visibility: none;
+}
+
+.sw-text-intro .ellipses {
+    letter-spacing: 1rem;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Bakonyi Bitfaragók</title>
+</head>
+<body>
+    <main>
+        <section id="teto">
+            <h1>Bakonyi Bitfaragók</h1>
+            <div id="analogClock" class="clock">
+                <div class="retro-kar retro-ora" id="hourHand"></div>
+                <div class="retro-kar retro-perc" id="minuteHand"></div>
+                <div class="retro-kar retro-masodperc" id="secondHand"></div>
+                <div class="jelzes" id="jelzes12">12</div>
+                <div class="jelzes" id="jelzes3">3</div>
+                <div class="jelzes" id="jelzes6">6</div>
+                <div class="jelzes" id="jelzes9">9</div>
+            </div>                      
+            <div id="ora"></div>
+        </section>
+        <section id="csapat" class="csapat">
+            <ul style="list-style-type: none;">
+                <li>
+                    <img src="../forras/images/csps.jpg" draggable="false" alt="CsPS" class="csapat-kep">
+                    <p>Solti Csongor Péter</p>
+                    <button onclick="toggleBemutatkozas('bemutatkozas2')">Bemutatkozás</button>
+                    <div style="display: none;" class="bemutatkozas" id="bemutatkozas2">
+                        <p>Szia! A nevem Csongor, 17 éves vagyok, és jelenleg a BMSZC Neumann János Szakközépiskolában tanulok programozást és szoftverfejlesztést.</p>
+                        <hr>
+                        <p>Szabadidőmben szeretek játékokat játszani, filmeket nézni, valamint sokat olvasok és kódolok magamban.</p>
+                        <hr>
+                        <p>Fő célom, hogy sikeres programozó legyek és új technológiákat ismerjek, és tanuljak meg.</p>
+                        <hr>
+                        <p><a href="https://github.com/CsPS0" target="_blank">GitHub</a></p>
+                    </div>                    
+                </li>
+            </ul>
+            <p>Felkészítő tanár: <span class="tanar" title="dravucz.katalin@njszg.hu">Drávucz Katalin</span></p>
+            <p>Iskola: <a class="iskolak" href="https://neumann.bmszc.hu/" target="_blank">BMSZC Neumann János</a></p>
+        </section>
+        <section id="extra-kepek">
+            <h2>Extra képek</h2>
+            <button id="kovetkezoKep" onclick="mutasdTitkoskep()">Következő kép</button>
+            <img id="extraKep" class="extra-kep" src="#" alt="Extra kép" style="display: none;">
+        </section>
+        <section id="keplista">
+            <img id="extraKep1" class="extra-kep" src="../forras/images/tajkep1.jpg" draggable="false" alt="Extra kép 1" style="display:none;">
+            <img id="extraKep2" class="extra-kep" src="../forras/images/tajkep2.jpg" draggable="false" alt="Extra kép 2" style="display:none;">
+            <img id="extraKep3" class="extra-kep" src="../forras/images/tajkep3.jpg" draggable="false" alt="Extra kép 3" style="display:none;">
+            <img id="extraKep4" class="extra-kep" src="../forras/images/tajkep4.jpg" draggable="false" alt="Extra kép 4" style="display:none;">
+            <img id="extraKep5" class="extra-kep" src="../forras/images/tajkep5.jpg" draggable="false" alt="Extra kép 5" style="display:none;">
+        </section>        
+    </main>
+    <script src="script1.js"></script>
+</body>
+</html>

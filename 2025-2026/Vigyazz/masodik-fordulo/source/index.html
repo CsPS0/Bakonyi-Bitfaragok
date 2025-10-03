@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <title>Star Wars: Rebel Strike</title>
+</head>
+<body>
+
+    <div class="sw-container">
+        <h1 class="sw-text-intro">A long time ago in a galaxy far, far away <span class="ellipses">....</span></h1>
+    
+        <section class="sw-crawl">
+            <p class="sw-text sw-episode">Episode IV</p>
+            <h1 class="sw-text sw-title">A new hope</h1>
+            <p class="sw-text">It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire.</p>
+    
+            <p class="sw-text">During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet.</p>
+    
+            <p class="sw-text">Pursued by the Empire's sinister agents, Princess Leia races home aboard her starship, custodian of the stolen plans that can save her people and restore freedom to the galaxy...</p>
+        </section>
+    </div>
+
+    <div id="faction-menu">
+        <h2>Choose your faction:</h2>
+        <div class="faction-buttons">
+            <button id="rebel-button">Rebel Alliance</button>
+            <button id="empire-button">Galactic Empire</button>
+        </div>
+    </div>
+
+    <div id="game-screen" style="display: none;">
+        <div id="tutorial-panel">
+            <h2>Mission Briefing</h2>
+            <div id="tutorial-content">
+                <!-- Tutorial content will be loaded here by JS -->
+            </div>
+        </div>
+
+        <div id="game-main">
+            <div id="game-container">
+                <h1 class="text-4xl font-bold my-4">Star Wars: Rebel Strike</h1>
+                <div id="stats" class="text-lg">
+                    <p>Probes: <span id="step-counter">0</span></p>
+                </div>
+                <div id="grid-container" class="grid grid-cols-12 grid-rows-12 gap-0.5 my-4"></div>
+                <div id="controls" class="flex items-center gap-4">
+                    <div>
+                        <label for="time-attack-checkbox">Time Attack Mode:</label>
+                        <input type="checkbox" id="time-attack-checkbox">
+                    </div>
+                    <button id="new-game-button" class="px-4 py-2 rounded">New Game</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="scoreboard-panel">
+            <h2>High Scores</h2>
+            <ul id="scoreboard-list">
+                <!-- Scoreboard entries will be loaded here by JS -->
+            </ul>
+            <div id="score-entry" style="display: none;">
+                <h3>You made the list!</h3>
+                <input type="text" id="player-name-input" placeholder="Enter your name" maxlength="15">
+                <button id="submit-score-button">Submit Score</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="ship-destroyed-modal">
+        <div class="modal-content">
+            <h2 id="modal-ship-name"></h2>
+            <div id="modal-ship-icon"></div>
+            <p>Destroyed!</p>
+            <button id="modal-close-button">Close</button>
+        </div>
+    </div>
+
+    <script src="JS/script.js"></script>
+</body>
+</html>
