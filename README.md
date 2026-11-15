@@ -1,5 +1,6 @@
-> [!NOTE]
-> **Archivált projekt:** Ez a tároló lezárult és archiválva van, mivel a jövőben már nem fogok többet indulni a Bakonyi Bitfaragó Bajnokság versenyen. A tároló a 2024–2025-ös és a 2025–2026-os szezonok megoldásait és archív kódjait őrzi meg változatlan formában.
+> [!WARNING]
+> ## ARCHIVED
+> Ez a tároló lezárult és archiválva van, mivel a jövőben már nem fogok többet indulni a Bakonyi Bitfaragó Bajnokság versenyen. A tároló a 2024–2025-ös és a 2025–2026-os szezonok megoldásait és archív kódjait őrzi meg változatlan formában.
 
 # Bakonyi Bitfaragó Bajnokság
 
